@@ -106,9 +106,6 @@ autocmd BufWritePre *.rb :%s/\s\+$//e " Strip trailing space from Ruby files on 
 " ==============================================================================
 " # Mappings
 
-" Inspired by Sam Phippen's sugggestion to use a mapping hierarchy, I've been
-" moving to three character mappings in an attempt to avoid mapping clashes.
-
 " ## Moving around buffers and tabs
 nnoremap <C-n> :bprev<CR> " Previous buffer
 nnoremap <C-m> :bnext<CR> " Next buffer
@@ -118,6 +115,10 @@ nnoremap } :tabnext<CR>   " Next tab
 " ## Resizing panes
 nnoremap <silent> <leader>+ :exe "resize " . (winheight(0) * 3/2)<CR>
 nnoremap <silent> <leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
+
+" Inspired by Sam Phippen's sugggestion to use a previx tree, I've been
+" moving to three character mappings in an attempt to avoid mapping clashes.
+" https://samphippen.com/how-i-organise-my-vim-hotkeys/
 
 nnoremap <leader>vcr :source $MYVIMRC<CR>
 nnoremap <leader>vce :e $MYVIMRC<CR>
