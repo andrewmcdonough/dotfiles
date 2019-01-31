@@ -1,0 +1,19 @@
+alias rc='bundle exec rails console'
+alias gwc='git whatchanged -p --abbrev-commit --pretty=medium'
+alias lsfs='ls -laSr'
+alias be='bundle exec'
+alias gca='git commit --amend'
+alias be='bundle exec'
+alias dbe='dotenv bundle exec'
+alias t='task'
+alias cuc='bundle exec cucumber --require features'
+alias kcr='killall -9 Google\ Chrome'
+alias glast="git for-each-ref --count=10 --sort=-committerdate refs/heads/ --format='%(refname:short)'"
+alias gpr="hub pull-request -b master"
+alias ctags-ruby='ctags -R --languages=ruby --exclude=.git --exclude=log -f.tags'
+alias jst='python -mjson.tool'
+alias awl='awless'
+alias wl='wunderline'
+alias mystart='mysql.server start'
+alias vopen='hdiutil attach ~/vault.dmg && ssh-add ~/.ssh/id_rsa'
+source ~/.unshared_aliases
