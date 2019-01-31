@@ -4,8 +4,8 @@ ln -s ~/dotfiles/vimrc ~/.vimrc
 ln -s ~/dotfiles/gitconfig ~/.gitconfig
 ln -s ~/dotfiles/git-completion.bash ~/.git-completion
 ln -s ~/dotfiles/bashrc ~/.bashrc
+ln -s ~/dotfiles/ackrc ~/.ackrc
 
-#ln -s ~/dotfiles/ackrc ~/.ackrc
 #ln -s ~/dotfiles/git-completion ~/.git-completion
 #ln -s ~/dotfiles/gitignore_global ~/.gitignore_global
 #ln -s ~/dotfiles/irbrc ~/.irbrc

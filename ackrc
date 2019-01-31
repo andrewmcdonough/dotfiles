@@ -1,0 +1,11 @@
+--type-add=ruby=.rake,.rsel,.builder,.thor
+--ignore-dir=/vendor
+--ignore-dir=/tmp
+--ignore-dir=/doc
+--ignore-dir=log
+--ignore-dir=public/assets
+--color
+--group
+--smart-case
+--sort-files
+--follow
