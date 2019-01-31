@@ -1,0 +1,11 @@
+.ctags
+*.swp
+.DS_Store
+.DS_Store?
+._*
+.rvmrc
+.ruby-version
+.gem
+.chgems
+.gemset
+*.pyc
