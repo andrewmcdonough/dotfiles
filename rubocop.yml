@@ -1,0 +1,11 @@
+Style/Encoding:
+  Enabled: false
+
+Metrics/LineLength:
+  Max: 120
+
+StringLiterals:
+  Enabled: false
+
+Documentation:
+  Enabled: false
