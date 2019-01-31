@@ -1,0 +1,50 @@
+[user]
+  name = Andrew McDonough
+  email = andrew@andrewmcdonough.co.uk
+
+[color]
+  branch = auto
+  diff = auto
+  status = auto
+
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
+
+[color "status"]
+  added = yellow
+  changed = green
+  untracked = cyan
+
+[format]
+  pretty=format:%C(yellow)%h %Cred%ci%Creset %C(red)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset
+
+[alias]
+  st = status
+  ci = commit
+  co = checkout
+  di = diff
+  am = commit --amend
+
+[core]
+  editor = /usr/bin/vim
+  excludesfile = ~/.gitignore
+
+[branch]
+  autosetuprebase = always
+
+[push]
+  default = upstream
+
+[interactive]
+  diffFilter = diff-so-fancy
+
+[log]
+  date = local
