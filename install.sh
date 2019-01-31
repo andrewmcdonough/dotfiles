@@ -8,9 +8,9 @@ ln -s ~/dotfiles/ackrc ~/.ackrc
 ln -s ~/dotfiles/pryrc ~/.pryrc
 ln -s ~/dotfiles/gitignore_global ~/.gitignore_global
 ln -s ~/dotfiles/lynxrc ~/.lynxrc
+ln -s ~/dotfiles/irbrc ~/.irbrc
+ln -s ~/dotfiles/rspec ~/.rspec
 
-#ln -s ~/dotfiles/irbrc ~/.irbrc
-#ln -s ~/dotfiles/rspec ~/.rspec
 #ln -s ~/dotfiles/shell_aliases ~/.shell_aliases
 #ln -s ~/dotfiles/tmux.conf ~/.tmux.conf
 #ln -s ~/dotfiles/vimrc ~/.vimrc
