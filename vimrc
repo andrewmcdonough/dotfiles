@@ -27,13 +27,13 @@ Plugin 'nelstrom/vim-textobj-rubyblock' " For working with Ruby blocks
 Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim/'} " Tomorrow colour scheme
 
 " Syntax highlighting and utilities
-Plugin 'tpope/vim-cucumber' " Cucumber
-Plugin 'tpope/vim-rails' " Rails
-Plugin 'thoughtbot/vim-rspec' " Rspec
-Plugin 'mxw/vim-jsx' " JSX 
-Plugin 'posva/vim-vue' " Vue
-Plugin 'fatih/vim-go' " Go
-Plugin 'pangloss/vim-javascript' " Javascript
+Plugin 'tpope/vim-cucumber'       " Cucumber
+Plugin 'tpope/vim-rails'          " Rails
+Plugin 'thoughtbot/vim-rspec'     " Rspec
+Plugin 'mxw/vim-jsx'              " JSX 
+Plugin 'posva/vim-vue'            " Vue
+Plugin 'fatih/vim-go'             " Go
+Plugin 'pangloss/vim-javascript'  " Javascript
 
 call vundle#end()
 
@@ -49,7 +49,6 @@ set shiftwidth=2    " Indent width for autoindent
 filetype plugin indent on
 autocmd FileType php setlocal tabstop=4 shiftwidth=4 " Zend's style guide recommends four space indentation
 
-filetype off        " TODO ?
 syntax on           " Syntax highlighting
 set nocompatible    " Use the newer features of vim
 set encoding=utf-8  " Default to UTF-8 encoding
@@ -63,8 +62,7 @@ set backupdir=~/tmp " Don't annoy me with swap files in working directory
 set directory=~/tmp 
 set background=dark " I prefer dark colour schemes, even during the day
 set cm=blowfish2    " Use th blowfish cypher for encypting files
-set expandtab       " turn tabs into whitespace
-set list            " TODO: ? 
+set list            " "show whitespace
 set statusline=%F%m%r%h%w\ [TYPE=%Y\ %{&ff}]\ [L:\ %l/%L\ (%p%%)]\ C:%c " A nicer status bar
 colorscheme Tomorrow-Night-Bright
 
