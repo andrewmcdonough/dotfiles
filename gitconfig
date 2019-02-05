@@ -43,8 +43,5 @@
 [push]
   default = upstream
 
-[interactive]
-  diffFilter = diff-so-fancy
-
 [log]
   date = local
