@@ -114,7 +114,7 @@ nnoremap } :tabnext<CR>   " Next tab
 nnoremap <silent> <leader>+ :exe "resize " . (winheight(0) * 3/2)<CR>
 nnoremap <silent> <leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
 
-" Inspired by Sam Phippen's sugggestion to use a previx tree, I've been
+" Inspired by Sam Phippen's sugggestion to use a prefix tree, I've been
 " moving to three character mappings in an attempt to avoid mapping clashes.
 " https://samphippen.com/how-i-organise-my-vim-hotkeys/
 
