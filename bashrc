@@ -1,7 +1,7 @@
 export GOPATH=$HOME/go
 export NODE_PATH="/usr/local/lib/node"
 export NODE_ENV=development
-export PATH=/usr/bin:/usr/local/opt/python/libexec/bin:/usr/local/bin/:/opt/local/bin:/opt/local/sbin:/usr/local/sbin:/usr/local/share/npm/bin:/opt/android/platform-tools:/opt/android/tools:/usr/local/mysql/bin:/var/lib/gems/1.8/bin:~/bin:$GOPATH/bin:$PATH
+export PATH=/usr/bin:/usr/local/opt/python/libexec/bin:/usr/local/bin/:/opt/local/bin:/opt/local/sbin:/usr/local/sbin:/usr/local/share/npm/bin:/opt/android/platform-tools:/opt/android/tools:/usr/local/mysql/bin:/var/lib/gems/1.8/bin:~/bin:/usr/local/opt/icu4c/bin:$GOPATH/bin:$PATH
 
 export MANPATH=/usr/local/git/man:/opt/local/share/man:$MANPATH
 export EDITOR=/usr/local/bin/vim
