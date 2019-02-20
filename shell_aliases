@@ -16,4 +16,6 @@ alias awl='awless'
 alias wl='wunderline'
 alias mystart='mysql.server start'
 alias vopen='hdiutil attach ~/vault.dmg && ssh-add ~/.ssh/id_rsa'
+alias gco='git commit -v'
+alias gad='git add . -p'
 source ~/.unshared_aliases
