@@ -131,10 +131,13 @@ nnoremap <leader>rnv :e views<CR>
 nnoremap <leader>rnc :e controllers<CR>
 
 " ### Running tests
+nnoremap <leader>t :call RunCurrentSpecFile()<CR>
 nnoremap <leader>rtt :call RunCurrentSpecFile()<CR>
 nnoremap <leader>rtn :call RunNearestSpec()<CR>
 nnoremap <leader>rtl :call RunLastSpec()<CR>
 nnoremap <leader>rta :call RunAllSpecs()<CR>
+
+nnoremap <leader>sp :set spell spelllang=en_gb<CR>
 
 " ## Git
 
