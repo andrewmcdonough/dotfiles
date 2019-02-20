@@ -10,7 +10,7 @@ export DISABLE_SPRING=true # I don't like Spring
 export LC_ALL=en_GB.UTF-8
 export AWS_DEFAULT_REGION=eu-west-1
 export GREP_OPTIONS="--exclude-dir=var/cache"
-export LANG=C
+#export LANG=C
 export DYLD_LIBRARY_PATH=/usr/local/mysql/lib:$DYLD_LIBRARY_PATH
 export ANDROID_SDK="/opt/android"
 
