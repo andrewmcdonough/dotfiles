@@ -1,5 +1,4 @@
 tap "heroku/brew"
-tap "homebrew/boneyard"
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/cask-fonts"
