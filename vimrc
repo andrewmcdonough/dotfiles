@@ -31,8 +31,8 @@ Plugin 'tpope/vim-cucumber'       " Cucumber
 Plugin 'tpope/vim-rails'          " Rails
 Plugin 'thoughtbot/vim-rspec'     " Rspec
 Plugin 'mxw/vim-jsx'              " JSX 
-Plugin 'posva/vim-vue'            " Vue
-Plugin 'fatih/vim-go'             " Go
+"Plugin 'posva/vim-vue'            " Vue
+"Plugin 'fatih/vim-go'             " Go
 Plugin 'pangloss/vim-javascript'  " Javascript
 
 call vundle#end()
@@ -61,7 +61,7 @@ set tags=.tags      " Put ctags file in .tags
 set backupdir=~/tmp " Don't annoy me with swap files in working directory
 set directory=~/tmp 
 set background=dark " I prefer dark colour schemes, even during the day
-set cm=blowfish2    " Use th blowfish cypher for encypting files
+"set cm=blowfish2    " Use th blowfish cypher for encypting files
 set list            " "show whitespace
 set statusline=%F%m%r%h%w\ [TYPE=%Y\ %{&ff}]\ [L:\ %l/%L\ (%p%%)]\ C:%c " A nicer status bar
 colorscheme Tomorrow-Night-Bright

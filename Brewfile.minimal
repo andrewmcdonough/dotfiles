@@ -1,0 +1,2 @@
+tap "wallix/awless"
+brew "wallix/awless/awless"

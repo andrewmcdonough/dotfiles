@@ -1,7 +1,7 @@
 export GOPATH=$HOME/go
 export NODE_PATH="/usr/local/lib/node"
 export NODE_ENV=development
-export PATH=/usr/bin:/usr/local/opt/python/libexec/bin:/usr/local/bin/:/opt/local/bin:/opt/local/sbin:/usr/local/sbin:/usr/local/share/npm/bin:/opt/android/platform-tools:/opt/android/tools:/usr/local/mysql/bin:/var/lib/gems/1.8/bin:~/bin:/usr/local/opt/icu4c/bin:$GOPATH/bin:$PATH
+export PATH=/usr/local/opt/curl/bin:/usr/bin:/usr/local/opt/python/libexec/bin:/usr/local/bin/:/opt/local/bin:/opt/local/sbin:/usr/local/sbin:/usr/local/share/npm/bin:/opt/android/platform-tools:/opt/android/tools:/usr/local/mysql/bin:/var/lib/gems/1.8/bin:~/bin:/usr/local/opt/icu4c/bin:$GOPATH/bin:$PATH
 
 export MANPATH=/usr/local/git/man:/opt/local/share/man:$MANPATH
 export EDITOR=/usr/local/bin/vim
@@ -25,6 +25,10 @@ if [ -f ~/.shell_aliases ]; then
     . ~/.shell_aliases
 fi
 
+# Hack - to get bash completion working on old computer
+source ~/.git-prompt.sh
+source ~/.git-completion
+
 # Bash completion
 # Prerequsites:  brew install bash-completion git-extras
 [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
@@ -44,6 +48,7 @@ case `uname` in
 'Darwin')
 # Mac specific settings
   alias vi='/usr/local/bin/vim'
+  #alias vi='/usr/bin/vim'
   alias ctags='/usr/local/bin/ctags'
 # End Mac specific settings
 ;;
@@ -53,3 +58,5 @@ case `uname` in
 # End Linux specific settings
 ;;
 esac
+
+[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
