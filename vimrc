@@ -118,6 +118,9 @@ nnoremap <silent> <leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
 " moving to three character mappings in an attempt to avoid mapping clashes.
 " https://samphippen.com/how-i-organise-my-vim-hotkeys/
 
+nnoremap <leader>exp :Explore<CR>
+command! Ex Explore
+
 nnoremap <leader>vcr :source $MYVIMRC<CR>
 nnoremap <leader>vce :e $MYVIMRC<CR>
 
