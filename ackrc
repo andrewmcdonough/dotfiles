@@ -4,6 +4,8 @@
 --ignore-dir=/doc
 --ignore-dir=log
 --ignore-dir=public/assets
+--ignore-dir=public/packs/js
+--ignore-dir=public/packs-test
 --color
 --group
 --smart-case
