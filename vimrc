@@ -15,7 +15,7 @@ Plugin 'tpope/vim-sensible'             " A sensible set of vim defaults
 Plugin 'kana/vim-textobj-user'          " Create your own text objects
 Plugin 'tmhedberg/matchit'              " Extended block matching
 Plugin 'mileszs/ack.vim'                " For searching for files
-Plugin 'scrooloose/syntastic'           " Check syntax on save
+"Plugin 'scrooloose/syntastic'           " Check syntax on save
 Plugin 'airblade/vim-gitgutter'         " Shows git diff in the gutter (left hand side)
 Plugin 'ctrlp.vim'                      " Fuzzy file finder by pressing Ctrl-P
 Plugin 'tpope/vim-dispatch'             " Run commands in tmux
@@ -25,6 +25,7 @@ Plugin 'tpope/vim-surround'             " Manipulate surrounding parentheses, br
 Plugin 'tpope/vim-abolish'              " For case insensitive text substitution
 Plugin 'nelstrom/vim-textobj-rubyblock' " For working with Ruby blocks
 Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim/'} " Tomorrow colour scheme
+Plugin 'w0rp/ale'
 
 " Syntax highlighting and utilities
 Plugin 'tpope/vim-cucumber'       " Cucumber
@@ -73,6 +74,16 @@ endif
 " ==============================================================================
 
 " # Plugin configuraation
+
+let g:ale_linters = {
+\ 'javascript': ['eslint'],
+\ 'ruby': ['rubocop', 'ruby'],
+\}
+
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'javascript': ['eslint'],
+\}
 
 " ## syntastic.vim -  for checking syntax on save
 " set statusline+=%#warningmsg#
@@ -141,6 +152,9 @@ nnoremap <leader>rtl :call RunLastSpec()<CR>
 nnoremap <leader>rta :call RunAllSpecs()<CR>
 
 nnoremap <leader>sp :set spell spelllang=en_gb<CR>
+
+" # Autofix
+nnoremap <leader>f :ALEFix<CR>
 
 " ## Git
 
