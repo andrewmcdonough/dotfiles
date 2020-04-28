@@ -15,7 +15,6 @@ Plugin 'tpope/vim-sensible'             " A sensible set of vim defaults
 Plugin 'kana/vim-textobj-user'          " Create your own text objects
 Plugin 'tmhedberg/matchit'              " Extended block matching
 Plugin 'mileszs/ack.vim'                " For searching for files
-"Plugin 'scrooloose/syntastic'           " Check syntax on save
 Plugin 'airblade/vim-gitgutter'         " Shows git diff in the gutter (left hand side)
 Plugin 'ctrlp.vim'                      " Fuzzy file finder by pressing Ctrl-P
 Plugin 'tpope/vim-dispatch'             " Run commands in tmux
@@ -24,8 +23,8 @@ Plugin 'eiginn/netrw'                   " File browsing
 Plugin 'tpope/vim-surround'             " Manipulate surrounding parentheses, brackets, quotes, etc
 Plugin 'tpope/vim-abolish'              " For case insensitive text substitution
 Plugin 'nelstrom/vim-textobj-rubyblock' " For working with Ruby blocks
+Plugin 'dense-analysis/ale'             " Syntax Checking
 Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim/'} " Tomorrow colour scheme
-Plugin 'w0rp/ale'
 
 " Syntax highlighting and utilities
 Plugin 'tpope/vim-cucumber'       " Cucumber
@@ -65,7 +64,12 @@ set background=dark " I prefer dark colour schemes, even during the day
 "set cm=blowfish2    " Use th blowfish cypher for encypting files
 set list            " "show whitespace
 set statusline=%F%m%r%h%w\ [TYPE=%Y\ %{&ff}]\ [L:\ %l/%L\ (%p%%)]\ C:%c " A nicer status bar
-colorscheme Tomorrow-Night-Bright
+
+try
+  colorscheme Tomorrow-Night-Bright
+catch /^Vim\%((\a\+)\)\=:E185/
+  " Clean exit if colour scheme doesn't exist (e.g. pre-Vundling"
+endtry
 
 if has("gui_running")
   set guioptions=aiA " Disable toolbar, menu bar, scroll bars
@@ -169,10 +173,18 @@ map <leader>gho :call OpenFileInGitHub()<CR>
 " ### Front matter (for Gatsby)
 nnoremap <leader>gfm ggi---<CR>title: <CR>date: ' <ESC>"=strftime("%FT%TZ")<CR>Pa'<CR>---<CR><ESC>kkk$a
 
+" Map OSX clipboards - cut, copy paste
+vmap <C-x> :!pbcopy<CR> 
+vmap <C-c> :w !pbcopy<CR><CR> 
+map <C-v> :read !pbpaste<CR>
+
 " ==============================================================================
 " # Correct typos I make regularly
 
 iab identifer identifier
+iab langauge language
+iab langage language
+iab baord board
 
 " ==============================================================================
 " # Functions
