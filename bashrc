@@ -63,16 +63,10 @@ case `uname` in
 ;;
 esac
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/amcdonough/Downloads/google-cloud-sdk/path.bash.inc' ]; then . '/Users/amcdonough/Downloads/google-cloud-sdk/path.bash.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/amcdonough/Downloads/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/amcdonough/Downloads/google-cloud-sdk/completion.bash.inc'; fi
-
 [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 # direnv for project environment variables
 # https://direnv.net/
-eval "$(direnv hook bash)"
+[ -x "$(command -v direnv)" ] && eval "$(direnv hook bash)"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
