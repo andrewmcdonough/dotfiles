@@ -15,16 +15,14 @@ export GREP_OPTIONS="--exclude-dir=var/cache"
 export DYLD_LIBRARY_PATH=/usr/local/mysql/lib:$DYLD_LIBRARY_PATH
 export ANDROID_SDK="/opt/android"
 
-if [ $TERM == "screen-256color" ] || [ $TERM == "xterm-256color" ]; then
-  PS1='\[\033[01;33m\]\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[\033[01;31m\]$(__git_ps1)\[\033[01;35m\]$\[\033[00m\] '
-else
-  PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[00;36m\]\w\[\033[00m\]\$ '
-fi
+#if [ $TERM == "screen-256color" ] || [ $TERM == "xterm-256color" ]; then
+#  PS1='\[\033[01;33m\]\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[\033[01;31m\]$(__git_ps1)\[\033[01;35m\]$\[\033[00m\] '
+#else
+#  PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[00;36m\]\w\[\033[00m\]\$ '
+#fi
 
 # Keep aliases in a separate file
-if [ -f ~/.shell_aliases ]; then
-    . ~/.shell_aliases
-fi
+if [ -f ~/.shell_aliases ]; then . ~/.shell_aliases; fi
 
 # Hack - to get bash completion working on old computer
 #source ~/.git-prompt.sh
@@ -33,7 +31,6 @@ fi
 # Bash completion
 # Prerequsites:  brew install bash-completion git-extras
 [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
-
 # Prompt - hostname, git prompt
 PS1='\[\033[01;33m\]\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[\033[01;31m\]$(__git_ps1)\[\033[01;35m\]$\[\033[00m\] '
 
@@ -42,8 +39,8 @@ source /usr/local/opt/chruby/share/chruby/chruby.sh
 source /usr/local/opt/chruby/share/chruby/auto.sh
 
 # Node Version Manager
- export NVM_DIR="$HOME/.nvm"
- [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
 
 # Don't put secrets in the .bashrc
 source ~/.secrets/environment
@@ -52,6 +49,7 @@ source ~/.secrets/environment
 case `uname` in
 'Darwin')
 # Mac specific settings
+  export OPERATING_SYSTEM=osx
   alias vi='/usr/local/bin/vim'
   #alias vi='/usr/bin/vim'
   alias ctags='/usr/local/bin/ctags'
@@ -59,12 +57,11 @@ case `uname` in
 ;;
 'Linux')
 # Linux specific settings
+  export OPERATING_SYSTEM=linux
   alias vi='/usr/bin/vi'
 # End Linux specific settings
 ;;
 esac
-
-[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/amcdonough/Downloads/google-cloud-sdk/path.bash.inc' ]; then . '/Users/amcdonough/Downloads/google-cloud-sdk/path.bash.inc'; fi
@@ -72,8 +69,10 @@ if [ -f '/Users/amcdonough/Downloads/google-cloud-sdk/path.bash.inc' ]; then . '
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/amcdonough/Downloads/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/amcdonough/Downloads/google-cloud-sdk/completion.bash.inc'; fi
 
- [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
- # direnv for project environment variables
- # https://direnv.net/
- eval "$(direnv hook bash)"
+# direnv for project environment variables
+# https://direnv.net/
+eval "$(direnv hook bash)"
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

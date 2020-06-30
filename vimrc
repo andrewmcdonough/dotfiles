@@ -24,7 +24,13 @@ Plugin 'tpope/vim-surround'             " Manipulate surrounding parentheses, br
 Plugin 'tpope/vim-abolish'              " For case insensitive text substitution
 Plugin 'nelstrom/vim-textobj-rubyblock' " For working with Ruby blocks
 Plugin 'dense-analysis/ale'             " Syntax Checking
-Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim/'} " Tomorrow colour scheme
+Plugin 'vim-airline/vim-airline'        " A better status line
+Plugin 'vim-airline/vim-airline-themes' " A better status line
+
+" Color Schemes
+Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
+Plugin 'altercation/vim-colors-solarized'
+
 
 " Syntax highlighting and utilities
 Plugin 'tpope/vim-cucumber'       " Cucumber
@@ -63,7 +69,7 @@ set directory=~/tmp
 set background=dark " I prefer dark colour schemes, even during the day
 "set cm=blowfish2    " Use th blowfish cypher for encypting files
 set list            " "show whitespace
-set statusline=%F%m%r%h%w\ [TYPE=%Y\ %{&ff}]\ [L:\ %l/%L\ (%p%%)]\ C:%c " A nicer status bar
+"set statusline=%F%m%r%h%w\ [TYPE=%Y\ %{&ff}]\ [L:\ %l/%L\ (%p%%)]\ C:%c " A nicer status bar
 
 try
   colorscheme Tomorrow-Night-Bright
@@ -114,7 +120,7 @@ let g:tmux_sessionname=0
 let g:tmux_windowname="vim"
 let g:tmux_panenumber=1
 
-autocmd BufWritePre *.rb :%s/\s\+$//e " Strip trailing space from Ruby files on save
+autocmd BufWritePre *.rb,*.yml :%s/\s\+$//e " Strip trailing space from Ruby files on save
 
 " ==============================================================================
 " # Mappings
@@ -160,6 +166,10 @@ nnoremap <leader>sp :set spell spelllang=en_gb<CR>
 " # Autofix
 nnoremap <leader>f :ALEFix<CR>
 
+
+" # Pry
+nnoremap <leader>pry orequire "pry"; binding.pry<ESC>^
+
 " ## Git
 
 " Run a git blame on highlighted lines in visual mode
@@ -172,6 +182,10 @@ map <leader>gho :call OpenFileInGitHub()<CR>
 
 " ### Front matter (for Gatsby)
 nnoremap <leader>gfm ggi---<CR>title: <CR>date: ' <ESC>"=strftime("%FT%TZ")<CR>Pa'<CR>---<CR><ESC>kkk$a
+
+" Toggling paste mode
+
+set pastetoggle=<leader>pas
 
 " Map OSX clipboards - cut, copy paste
 vmap <C-x> :!pbcopy<CR> 
@@ -193,3 +207,7 @@ function! OpenFileInGitHub()
   " Opens the current file in the current branch on GitHub
   exec "!launchy https://`git remote get-url origin | sed 's/:/\\//g' | sed 's/git@//' | sed 's/.git$//g' `/tree/`git describe --contains --all HEAD`/%"
 endfunction
+
+" ==============================================================================
+" # Status bar configuration
+

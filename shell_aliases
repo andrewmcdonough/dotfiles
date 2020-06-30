@@ -21,7 +21,7 @@ alias gca='git commit --amend'
 alias gwc='git whatchanged -p --abbrev-commit --pretty=medium'
 alias gco='git commit -v'
 alias gad='git add . -p'
-alias glast="git for-each-ref --count=10 --sort=-committerdate refs/heads/ --format='%(refname:short)'"
+alias glast="git for-each-ref --count=20 --sort=-committerdate refs/heads/ --format='%(refname:short)'"
 alias gpr="hub pull-request -b master"
 
 # K8S aliases
@@ -34,11 +34,13 @@ alias ksh='kubectl exec -it $(kubectl get pods | grep '"'"'qa-da'"'"' | cut -d '
 
 # Not regularly used. Consider deleting
 alias t='task'
-alias wl='wunderline'
 alias lsfs='ls -laSr'
 alias hgr='history | grep'
 alias swag='docker run -d -p 80:8080 swaggerapi/swagger-editor'
 alias rinit='echo 2.6.1 > .ruby-version && chruby'
+
+# To create co-authored text
+alias coauth='printf "Co-authored-by: %s" "$(git log --pretty=format:"%an <%ae>" -1000 | sort | uniq | fzf)" | pbcopy'
 
 # Aliases I don't share on GitHub as they have sensitive information
 source ~/.unshared_aliases
