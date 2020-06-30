@@ -210,4 +210,28 @@ endfunction
 
 " ==============================================================================
 " # Status bar configuration
+" https://github.com/vim-airline/vim-airline
 
+" section  meaning (example)
+" A  displays the mode + additional flags like crypt/spell/paste (INSERT)
+" B  VCS information - branch, hunk summary (master)
+" C  filename + read-only flag (~/.vim/vimrc RO)
+" X  filetype (vim)
+" Y  file encoding[fileformat] (utf-8[unix])
+" Z  current position in the file
+" [...]  additional sections (warning/errors/statistics) from external plugins (e.g. YCM, syntastic, ...)
+
+let g:airline#extensions#default#section_truncate_width = {
+      \ 'a': 50,
+      \ 'b': 160,
+      \ 'x': 70,
+      \ 'y': 60,
+      \ 'z': 60,
+      \ 'warning': 80,
+      \ 'error': 80,
+      \ }
+
+let g:airline#extensions#default#layout = [
+      \ [ 'a', 'c', 'b' ],
+      \ [ 'x', 'y', 'z', 'error', 'warning' ]
+      \ ]
