@@ -1,4 +1,5 @@
 #!/bin/sh
+mkdir -p ~/.config/yamllint
 
 ln -s -f ~/dotfiles/vimrc ~/.vimrc
 ln -s -f ~/dotfiles/gitconfig ~/.gitconfig
@@ -13,5 +14,5 @@ ln -s -f ~/dotfiles/rspec ~/.rspec
 ln -s -f ~/dotfiles/rubocop.yml ~/.rubocop.yml
 ln -s -f ~/dotfiles/tmux.conf ~/.tmux.conf
 ln -s -f ~/dotfiles/shell_aliases ~/.shell_aliases
-ln -s -f ~/dotfiles/yamllint.yaml ~/.yamllint.yaml
+ln -s -f ~/dotfiles/yamllint.yaml ~/.config/yamllint/config
 ln -s -f ~/dotfiles/eslint.yaml ~/.eslint.yaml
