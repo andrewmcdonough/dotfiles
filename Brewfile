@@ -117,6 +117,7 @@ brew "watch"
 brew "watchman"
 brew "wget"
 brew "yarn", link: false
+brew "yamllint"
 brew "youtube-dl"
 brew "heroku/brew/heroku"
 brew "jmhobbs/parrot/terminal-parrot"

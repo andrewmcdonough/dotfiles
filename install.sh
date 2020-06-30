@@ -13,3 +13,5 @@ ln -s -f ~/dotfiles/rspec ~/.rspec
 ln -s -f ~/dotfiles/rubocop.yml ~/.rubocop.yml
 ln -s -f ~/dotfiles/tmux.conf ~/.tmux.conf
 ln -s -f ~/dotfiles/shell_aliases ~/.shell_aliases
+ln -s -f ~/dotfiles/yamllint.yaml ~/.yamllint.yaml
+ln -s -f ~/dotfiles/eslint.yaml ~/.eslint.yaml
