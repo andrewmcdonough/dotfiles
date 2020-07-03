@@ -16,3 +16,5 @@ ln -s -f ~/dotfiles/tmux.conf ~/.tmux.conf
 ln -s -f ~/dotfiles/shell_aliases ~/.shell_aliases
 ln -s -f ~/dotfiles/yamllint.yaml ~/.config/yamllint/config
 ln -s -f ~/dotfiles/eslint.yaml ~/.eslint.yaml
+ln -s -f ~/dotfiles/git-completion.bash ~/.git-completion.bash
+ln -s -f ~/dotfiles/git-prompt.sh ~/.git-prompt.sh
