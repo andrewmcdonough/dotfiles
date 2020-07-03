@@ -42,8 +42,12 @@ alias rinit='echo 2.6.1 > .ruby-version && chruby'
 # To create co-authored text
 alias coauth='printf "Co-authored-by: %s" "$(git log --pretty=format:"%an <%ae>" -1000 | sort | uniq | fzf)" | pbcopy'
 
+# Ansible
+alias av='ansible-vault'
+alias ap='ansible-playbook'
+
 # Aliases I don't share on GitHub as they have sensitive information
-[[ -r "~/.unshared_aliases" ]] && source "~/.unshared_aliases"
+[[ -s "$HOME/.unshared_aliases" ]] && source "$HOME/.unshared_aliases"
 
 # Quick help on all aliases
 alias h="cat ~/.shell_aliases ~/.unshared_aliases"
