@@ -13,6 +13,7 @@ export GREP_OPTIONS="--exclude-dir=var/cache"
 #export LANG=C
 export DYLD_LIBRARY_PATH=/usr/local/mysql/lib:$DYLD_LIBRARY_PATH
 export ANDROID_SDK="/opt/android"
+export DOCKER_BUILDKIT=1
 
 # Keep aliases in a separate file
 [[ -s "$HOME/.shell_aliases" ]] && source "$HOME/.shell_aliases"
@@ -48,6 +49,9 @@ case `uname` in
   alias vi='/usr/local/bin/vim'
   #alias vi='/usr/bin/vim'
   alias ctags='/usr/local/bin/ctags'
+
+  source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.bash.inc"
+  source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.bash.inc"
 # End Mac specific settings
 ;;
 'Linux')
@@ -57,6 +61,7 @@ case `uname` in
 # End Linux specific settings
 ;;
 esac
+
 
 [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
