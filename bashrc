@@ -70,3 +70,5 @@ esac
 [ -x "$(command -v direnv)" ] && eval "$(direnv hook bash)"
 
 [ -f $HOME/.fzf.bash ] && source $HOME/.fzf.bash
+
+eval "$(starship init bash)"
