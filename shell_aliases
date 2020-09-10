@@ -52,3 +52,6 @@ alias ap='ansible-playbook'
 
 # Quick help on all aliases
 alias h="cat ~/.shell_aliases ~/.unshared_aliases"
+
+# PlantUML
+alias puml="java -jar ~/bin/plantuml.jar -verbose"
