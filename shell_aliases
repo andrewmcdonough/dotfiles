@@ -17,6 +17,7 @@ alias rc='bundle exec rails console'
 alias ctags-ruby='ctags -R --languages=ruby --exclude=.git --exclude=log -f.tags'
 
 # git aliases
+alias g='git'
 alias gca='git commit --amend'
 alias gwc='git whatchanged -p --abbrev-commit --pretty=medium'
 alias gco='git commit -v'
