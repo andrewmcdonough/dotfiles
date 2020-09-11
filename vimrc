@@ -15,7 +15,6 @@ Plug 'kana/vim-textobj-user'          " Create your own text objects
 Plug 'tmhedberg/matchit'              " Extended block matching
 Plug 'mileszs/ack.vim'                " For searching for files
 Plug 'airblade/vim-gitgutter'         " Shows git diff in the gutter (left hand side)
-Plug 'kien/ctrlp.vim'                 " Fuzzy file finder by pressing Ctrl-P
 Plug 'tpope/vim-dispatch'             " Run commands in tmux
 Plug 'vim-scripts/tComment'           " For easy line commenting
 Plug 'eiginn/netrw'                   " File browsing
@@ -25,6 +24,9 @@ Plug 'nelstrom/vim-textobj-rubyblock' " For working with Ruby blocks
 Plug 'dense-analysis/ale'             " Syntax Checking
 Plug 'vim-airline/vim-airline'        " A better status line
 Plug 'vim-airline/vim-airline-themes' " A better status line
+Plug 'tpope/vim-vinegar'              " Better netrw
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'               " Fuzzy finder
 
 " Color Schemes
 Plug 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
@@ -164,9 +166,11 @@ nnoremap <leader>sp :set spell spelllang=en_gb<CR>
 " # Autofix
 nnoremap <leader>f :ALEFix<CR>
 
-
 " # Pry
 nnoremap <leader>pry orequire "pry"; binding.pry<ESC>^
+
+" # fzf
+nnoremap <C-p> :Files<CR>
 
 " ## Git
 
@@ -233,3 +237,13 @@ let g:airline#extensions#default#layout = [
       \ [ 'a', 'c', 'b' ],
       \ [ 'x', 'y', 'z', 'error', 'warning' ]
       \ ]
+
+" ==============================================================================
+" # netrw configuration
+"
+" Much of this borrowed from @shapeshed: https://shapeshed.com/vim-netrw/
+let g:netrw_banner = 0        " No banner
+"let g:netrw_browse_split = 4  " Open new files in a horizontal split
+let g:netrw_winsize = 10      " Set width as 25
+let g:netrw_liststyle = 3
+let g:netrw_altv = 1
