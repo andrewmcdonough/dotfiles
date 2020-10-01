@@ -27,6 +27,9 @@ Plug 'vim-airline/vim-airline-themes' " A better status line
 Plug 'tpope/vim-vinegar'              " Better netrw
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'               " Fuzzy finder
+Plug 'liuchengxu/vim-which-key'       " Show available keybindings
+Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
+Plug 'masukomi/vim-markdown-folding'  " Markdown folding
 
 " Color Schemes
 Plug 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
@@ -247,3 +250,9 @@ let g:netrw_banner = 0        " No banner
 let g:netrw_winsize = 10      " Set width as 25
 let g:netrw_liststyle = 3
 let g:netrw_altv = 1
+
+
+set nocompatible
+if has("autocmd")
+  filetype plugin indent on
+endif
