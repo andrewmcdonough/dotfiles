@@ -50,6 +50,9 @@ alias ap='ansible-playbook'
 # PlantUML - for creating UML from text files
 alias puml="java -jar ~/bin/plantuml.jar -verbose"
 
+# My common typos
+alias sl="ls"
+
 # Aliases I don't share on GitHub as they have sensitive information
 [[ -f "$HOME/.unshared_aliases" ]] && source "$HOME/.unshared_aliases"
 
