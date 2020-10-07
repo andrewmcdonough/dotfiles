@@ -1,47 +1,50 @@
 " ==============================================================================
-" # Plugins
+" # Pluginss
 
-" I've been using vundle for vim plugin management for the last few years.
+" I've moved from vundle to vim-plug 
 "
-" Install by running
+" See repo for installation instuctions
 "
-" `git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+" https://github.com/junegunn/vim-plug
+call plug#begin('~/.vim/plugged')
 
-Plugin 'gmarik/vundle'                  " Package manager
-Plugin 'tpope/vim-fugitive'             " Lots of nice git features
-Plugin 'tpope/vim-sensible'             " A sensible set of vim defaults
-Plugin 'kana/vim-textobj-user'          " Create your own text objects
-Plugin 'tmhedberg/matchit'              " Extended block matching
-Plugin 'mileszs/ack.vim'                " For searching for files
-Plugin 'airblade/vim-gitgutter'         " Shows git diff in the gutter (left hand side)
-Plugin 'ctrlp.vim'                      " Fuzzy file finder by pressing Ctrl-P
-Plugin 'tpope/vim-dispatch'             " Run commands in tmux
-Plugin 'tComment'                       " For easy line commenting
-Plugin 'eiginn/netrw'                   " File browsing
-Plugin 'tpope/vim-surround'             " Manipulate surrounding parentheses, brackets, quotes, etc
-Plugin 'tpope/vim-abolish'              " For case insensitive text substitution
-Plugin 'nelstrom/vim-textobj-rubyblock' " For working with Ruby blocks
-Plugin 'dense-analysis/ale'             " Syntax Checking
-Plugin 'vim-airline/vim-airline'        " A better status line
-Plugin 'vim-airline/vim-airline-themes' " A better status line
+Plug 'gmarik/vundle'                  " Package manager
+Plug 'tpope/vim-fugitive'             " Lots of nice git features
+Plug 'tpope/vim-sensible'             " A sensible set of vim defaults
+Plug 'kana/vim-textobj-user'          " Create your own text objects
+Plug 'tmhedberg/matchit'              " Extended block matching
+Plug 'mileszs/ack.vim'                " For searching for files
+Plug 'airblade/vim-gitgutter'         " Shows git diff in the gutter (left hand side)
+Plug 'tpope/vim-dispatch'             " Run commands in tmux
+Plug 'vim-scripts/tComment'           " For easy line commenting
+Plug 'eiginn/netrw'                   " File browsing
+Plug 'tpope/vim-surround'             " Manipulate surrounding parentheses, brackets, quotes, etc
+Plug 'tpope/vim-abolish'              " For case insensitive text substitution
+Plug 'nelstrom/vim-textobj-rubyblock' " For working with Ruby blocks
+Plug 'dense-analysis/ale'             " Syntax Checking
+Plug 'vim-airline/vim-airline'        " A better status line
+Plug 'vim-airline/vim-airline-themes' " A better status line
+Plug 'tpope/vim-vinegar'              " Better netrw
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'               " Fuzzy finder
+Plug 'liuchengxu/vim-which-key'       " Show available keybindings
+Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
+Plug 'masukomi/vim-markdown-folding'  " Markdown folding
 
 " Color Schemes
-Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
-Plugin 'altercation/vim-colors-solarized'
-
+Plug 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
+Plug 'altercation/vim-colors-solarized'
 
 " Syntax highlighting and utilities
-Plugin 'tpope/vim-cucumber'       " Cucumber
-Plugin 'tpope/vim-rails'          " Rails
-Plugin 'thoughtbot/vim-rspec'     " Rspec
-Plugin 'mxw/vim-jsx'              " JSX 
-Plugin 'posva/vim-vue'            " Vue
-"Plugin 'fatih/vim-go'             " Go
-Plugin 'pangloss/vim-javascript'  " Javascript
+Plug 'tpope/vim-cucumber'       " Cucumber
+Plug 'tpope/vim-rails'          " Rails
+Plug 'thoughtbot/vim-rspec'     " Rspec
+Plug 'mxw/vim-jsx'              " JSX 
+Plug 'posva/vim-vue'            " Vue
+"Plug 'fatih/vim-go'             " Go
+Plug 'pangloss/vim-javascript'  " Javascript
 
-call vundle#end()
+call plug#end()
 
 " ==============================================================================
 " # General configuration
@@ -83,7 +86,7 @@ endif
 
 " ==============================================================================
 
-" # Plugin configuraation
+" # Plug configuraation
 
 let g:ale_linters = {
 \ 'javascript': ['eslint'],
@@ -166,9 +169,11 @@ nnoremap <leader>sp :set spell spelllang=en_gb<CR>
 " # Autofix
 nnoremap <leader>f :ALEFix<CR>
 
-
 " # Pry
 nnoremap <leader>pry orequire "pry"; binding.pry<ESC>^
+
+" # fzf
+nnoremap <C-p> :Files<CR>
 
 " ## Git
 
@@ -235,3 +240,19 @@ let g:airline#extensions#default#layout = [
       \ [ 'a', 'c', 'b' ],
       \ [ 'x', 'y', 'z', 'error', 'warning' ]
       \ ]
+
+" ==============================================================================
+" # netrw configuration
+"
+" Much of this borrowed from @shapeshed: https://shapeshed.com/vim-netrw/
+let g:netrw_banner = 0        " No banner
+"let g:netrw_browse_split = 4  " Open new files in a horizontal split
+let g:netrw_winsize = 10      " Set width as 25
+let g:netrw_liststyle = 3
+let g:netrw_altv = 1
+
+
+set nocompatible
+if has("autocmd")
+  filetype plugin indent on
+endif

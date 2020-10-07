@@ -1,5 +1,8 @@
-#!/bin/sh
+#!/bin/bash
+
+mkdir -p ~/.config
 mkdir -p ~/.config/yamllint
+mkdir -p ~/tmp
 
 ln -s -f ~/dotfiles/vimrc ~/.vimrc
 ln -s -f ~/dotfiles/gitconfig ~/.gitconfig
@@ -18,3 +21,6 @@ ln -s -f ~/dotfiles/yamllint.yaml ~/.config/yamllint/config
 ln -s -f ~/dotfiles/eslint.yaml ~/.eslint.yaml
 ln -s -f ~/dotfiles/git-completion.bash ~/.git-completion.bash
 ln -s -f ~/dotfiles/git-prompt.sh ~/.git-prompt.sh
+ln -s -f ~/dotfiles/starship.toml ~/.config/starship.toml
+
+[[ ! -d ~/.vim/bundle/Vundle.vim ]] && git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim

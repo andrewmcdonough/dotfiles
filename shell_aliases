@@ -17,6 +17,7 @@ alias rc='bundle exec rails console'
 alias ctags-ruby='ctags -R --languages=ruby --exclude=.git --exclude=log -f.tags'
 
 # git aliases
+alias g='git'
 alias gca='git commit --amend'
 alias gwc='git whatchanged -p --abbrev-commit --pretty=medium'
 alias gco='git commit -v'
@@ -46,8 +47,14 @@ alias coauth='printf "Co-authored-by: %s" "$(git log --pretty=format:"%an <%ae>"
 alias av='ansible-vault'
 alias ap='ansible-playbook'
 
+# PlantUML - for creating UML from text files
+alias puml="java -jar ~/bin/plantuml.jar -verbose"
+
+# My common typos
+alias sl="ls"
+
 # Aliases I don't share on GitHub as they have sensitive information
-[[ -s "$HOME/.unshared_aliases" ]] && source "$HOME/.unshared_aliases"
+[[ -f "$HOME/.unshared_aliases" ]] && source "$HOME/.unshared_aliases"
 
 # Quick help on all aliases
 alias h="cat ~/.shell_aliases ~/.unshared_aliases"
