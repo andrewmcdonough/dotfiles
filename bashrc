@@ -5,7 +5,7 @@ export PATH=/usr/local/opt/curl/bin:/usr/bin:/usr/local/opt/python/libexec/bin:/
 export PATH=/usr/local/bin:/usr/local/opt/curl/bin:/usr/bin:/usr/local/opt/python/libexec/bin:/usr/local/bin/:/opt/local/bin:/opt/local/sbin:/usr/local/sbin:/usr/local/share/npm/bin:/opt/android/platform-tools:/opt/android/tools:/usr/local/mysql/bin:/var/lib/gems/1.8/bin:$HOME/bin:/usr/local/opt/icu4c/bin:$HOME/.fastlane/bin:$GOPATH/bin:$PATH
 
 export MANPATH=/usr/local/git/man:/opt/local/share/man:$MANPATH
-export EDITOR=/usr/local/bin/vim
+export EDITOR=/usr/local/bin/nvim
 export BLOCKSIZE=M # so du shows megabytes
 export DISABLE_SPRING=true # I don't like Spring
 export AWS_DEFAULT_REGION=eu-west-1
@@ -46,7 +46,7 @@ case `uname` in
 # Mac specific settings
   export OPERATING_SYSTEM=osx
   export LC_ALL=en_GB.UTF-8
-  alias vi='/usr/local/bin/vim'
+  alias vi='/usr/local/bin/nvim'
   #alias vi='/usr/bin/vim'
   alias ctags='/usr/local/bin/ctags'
 
