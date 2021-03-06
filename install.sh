@@ -23,4 +23,6 @@ ln -s -f ~/dotfiles/git-completion.bash ~/.git-completion.bash
 ln -s -f ~/dotfiles/git-prompt.sh ~/.git-prompt.sh
 ln -s -f ~/dotfiles/starship.toml ~/.config/starship.toml
 
-[[ ! -d ~/.vim/bundle/Vundle.vim ]] && git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+# Install vimplug
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+         https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
