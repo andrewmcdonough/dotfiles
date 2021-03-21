@@ -58,8 +58,8 @@ case `uname` in
 # Linux specific settings
   export OPERATING_SYSTEM=linux
   alias vi='/usr/bin/vi'
-  keychain id_rsa
-. ~/.keychain/`uname -n`-sh
+# keychain id_rsa
+# . ~/.keychain/`uname -n`-sh
 # End Linux specific settings
 ;;
 esac
