@@ -2,6 +2,7 @@
 
 mkdir -p ~/.config
 mkdir -p ~/.config/yamllint
+mkdir -p ~/.config/nvim/
 mkdir -p ~/tmp
 
 ln -s -f ~/dotfiles/vimrc ~/.vimrc
@@ -22,6 +23,7 @@ ln -s -f ~/dotfiles/eslint.yaml ~/.eslint.yaml
 ln -s -f ~/dotfiles/git-completion.bash ~/.git-completion.bash
 ln -s -f ~/dotfiles/git-prompt.sh ~/.git-prompt.sh
 ln -s -f ~/dotfiles/starship.toml ~/.config/starship.toml
+ln -s -f ~/dotfiles/init.vim ~/.config/nvim/init.vim
 
 # Install vimplug
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \

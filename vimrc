@@ -8,7 +8,7 @@
 " https://github.com/junegunn/vim-plug
 call plug#begin('~/.vim/plugged')
 
-Plug 'gmarik/vundle'                  " Package manager
+" Plug 'gmarik/vundle'                  " Package manager
 Plug 'tpope/vim-fugitive'             " Lots of nice git features
 Plug 'tpope/vim-sensible'             " A sensible set of vim defaults
 Plug 'kana/vim-textobj-user'          " Create your own text objects
@@ -29,9 +29,8 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'               " Fuzzy finder
 Plug 'liuchengxu/vim-which-key'       " Show available keybindings
 Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
-Plug 'masukomi/vim-markdown-folding'  " Markdown folding
 Plug 'mattn/emmet-vim'                " Templating
-Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+"Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 
 " Color Schemes
 Plug 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
@@ -43,7 +42,7 @@ Plug 'tpope/vim-rails'          " Rails
 Plug 'thoughtbot/vim-rspec'     " Rspec
 Plug 'mxw/vim-jsx'              " JSX 
 Plug 'posva/vim-vue'            " Vue
-"Plug 'fatih/vim-go'             " Go
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' } " Go
 Plug 'pangloss/vim-javascript'  " Javascript
 
 call plug#end()
@@ -75,6 +74,19 @@ set background=dark " I prefer dark colour schemes, even during the day
 "set cm=blowfish2    " Use th blowfish cypher for encypting files
 set list            " "show whitespace
 "set statusline=%F%m%r%h%w\ [TYPE=%Y\ %{&ff}]\ [L:\ %l/%L\ (%p%%)]\ C:%c " A nicer status bar
+"
+
+" ==============================================================================
+" # Templates
+
+if has("autocmd")
+  augroup templates
+    autocmd BufNewFile *.html 0r ~/.vim/templates/skeleton.html
+  augroup END
+endif
+
+" ==============================================================================
+" # Colours/UI
 
 try
   colorscheme Tomorrow-Night-Bright
@@ -87,8 +99,7 @@ if has("gui_running")
 endif
 
 " ==============================================================================
-
-" # Plug configuraation
+" # Plug configuration
 
 let g:ale_linters = {
 \ 'javascript': ['eslint'],
@@ -98,6 +109,7 @@ let g:ale_linters = {
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'javascript': ['eslint'],
+\   'go': ['golint'],
 \}
 
 " ## syntastic.vim -  for checking syntax on save
@@ -173,11 +185,42 @@ nnoremap <leader>f :ALEFix<CR>
 
 " # Pry
 nnoremap <leader>pry orequire "pry"; binding.pry<ESC>^
+nnoremap <leader>prr orequire "pry"; binding.pry_remote<ESC>^
+nnoremap <leader>log oRails.logger.debug("*** ")<ESC>hi
 
 " # fzf
 nnoremap <C-p> :Files<CR>
+nnoremap <C-M-p> :Rg<CR>
+nnoremap <C-M-t> ihello<CR>
 
-" ## Git
+" ## fzf templating - WIP - not currently working
+
+function! ApplyTemplate(templates)
+  " exec ":'<,'>!ruby -e \"require 'erb'; input = ARGF.read;  puts ERB.new(File.open('" + a:templates[0] + "').read, nil, '-').result(binding)"
+  " function! ApplyTemplate(template_name)
+  " normal e template_name
+  " system("!ruby -e \"require 'erb'; input = ARGF.read;  puts ERB.new(File.open('/Users/amcdonough/templates/class.erb').read, nil, '-').result(binding)\"")
+  " let myvar = system("ls")
+  " echom template_name
+  echom "Testing"
+endfunction
+
+function! GetTemplate()
+  exec "yy"
+  let ApplyFn = function("ApplyTemplate")
+  return fzf#run({
+  \ 'source': 'ls ~/templates/*.erb',
+  \ 'sink*':    ApplyFn,
+  \ 'options': '+m --prompt="Templates> "',
+  \ 'left': '20%'
+  \})
+endfunction
+
+nnoremap <leader>z :source ~/.vimrc<CR>
+
+"noremap <leader>t :call fzf#run({'source': 'ls ~/templates/*.erb', 'sink': 'e'})<CR>
+"noremap <leader>t :call GetTemplate()<CR>
+noremap <leader>t exec "ruby -e \"require 'erb'; input = ARGF.read;  puts ERB.new(File.open('$HOME/templates/class.erb').read, nil, '-').result(binding)\""
 
 " Run a git blame on highlighted lines in visual mode
 vmap gl :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p<CR>
@@ -189,6 +232,9 @@ map <leader>gho :call OpenFileInGitHub()<CR>
 
 " ### Front matter (for Gatsby)
 nnoremap <leader>gfm ggi---<CR>title: <CR>date: ' <ESC>"=strftime("%FT%TZ")<CR>Pa'<CR>---<CR><ESC>kkk$a
+
+
+nnoremap <leader>tp :<C-U>! ruby ~/code/vim-ruby-macros/bin/filter.rb<CR>
 
 " Toggling paste mode
 
@@ -259,4 +305,10 @@ if has("autocmd")
   filetype plugin indent on
 endif
 
-exe 'source' "~/dotfiles/coc.vim.config"
+" Autocompletion
+let g:coc_disable_startup_warning = 1
+" exe 'source' "~/dotfiles/coc.vim.config"
+
+
+" Common spelling mistakes
+ab language language

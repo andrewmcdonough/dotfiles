@@ -12,6 +12,8 @@ alias cuc='bundle exec cucumber --require features'
 alias be='bundle exec'
 alias dbe='dotenv bundle exec'
 alias rc='bundle exec rails console'
+alias ber='bundle exec rspec'
+alias rubo='bundle exec rubocop -a'
 
 # vim related aliases
 alias ctags-ruby='ctags -R --languages=ruby --exclude=.git --exclude=log -f.tags'
@@ -22,7 +24,8 @@ alias gca='git commit --amend'
 alias gwc='git whatchanged -p --abbrev-commit --pretty=medium'
 alias gco='git commit -v'
 alias gad='git add . -p'
-alias glast="git for-each-ref --count=20 --sort=-committerdate refs/heads/ --format='%(refname:short)'"
+# alias glast="git for-each-ref --count=20 --sort=-committerdate refs/heads/ --format='%(refname:short)'"
+alias glast='git for-each-ref --count=40 --sort=-committerdate refs/heads/ --format='\''%(refname:short)'\'' | fzf | xargs git checkout'
 alias gpr="hub pull-request -b master"
 
 # K8S aliases
@@ -58,3 +61,9 @@ alias sl="ls"
 
 # Quick help on all aliases
 alias h="cat ~/.shell_aliases ~/.unshared_aliases"
+
+# Terraform
+alias tf="terraform"
+alias tfi="terraform init"
+alias tfp="terraform plan"
+alias tfa="terraform apply"
