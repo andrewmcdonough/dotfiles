@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 mkdir -p ~/.config
 mkdir -p ~/.config/yamllint
 mkdir -p ~/.config/nvim/
@@ -9,6 +10,7 @@ ln -s -f ~/dotfiles/vimrc ~/.vimrc
 ln -s -f ~/dotfiles/gitconfig ~/.gitconfig
 ln -s -f ~/dotfiles/git-completion.bash ~/.git-completion
 ln -s -f ~/dotfiles/bashrc ~/.bashrc
+ln -s -f ~/dotfiles/zshrc ~/.zshrc
 ln -s -f ~/dotfiles/ackrc ~/.ackrc
 ln -s -f ~/dotfiles/pryrc ~/.pryrc
 ln -s -f ~/dotfiles/gitignore_global ~/.gitignore_global
