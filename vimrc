@@ -1,7 +1,7 @@
 " ==============================================================================
 " # Pluginss
 
-" I've moved from vundle to vim-plug 
+" I've moved from vundle to vim-plug
 "
 " See repo for installation instuctions
 "
@@ -40,7 +40,7 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'tpope/vim-cucumber'       " Cucumber
 Plug 'tpope/vim-rails'          " Rails
 Plug 'thoughtbot/vim-rspec'     " Rspec
-Plug 'mxw/vim-jsx'              " JSX 
+Plug 'mxw/vim-jsx'              " JSX
 Plug 'posva/vim-vue'            " Vue
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' } " Go
 Plug 'pangloss/vim-javascript'  " Javascript
@@ -69,7 +69,7 @@ set number          " Show line numbers on the left
 set colorcolumn=120 " set vertical marker at col 120, as a soft maximum line length
 set tags=.tags      " Put ctags file in .tags
 set backupdir=~/tmp " Don't annoy me with swap files in working directory
-set directory=~/tmp 
+set directory=~/tmp
 set background=dark " I prefer dark colour schemes, even during the day
 "set cm=blowfish2    " Use th blowfish cypher for encypting files
 set list            " "show whitespace
@@ -108,20 +108,22 @@ let g:ale_linters = {
 
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
-\   'javascript': ['eslint'],
+\   'javascript': ['prettier', 'eslint'],
 \   'go': ['golint'],
 \}
+
+let g:ale_fix_on_save = 1
 
 " ## syntastic.vim -  for checking syntax on save
 " set statusline+=%#warningmsg#
 " set statusline+=%{SyntasticStatuslineFlag()}
 " set statusline+=%*
-" 
+"
 " let g:syntastic_always_populate_loc_list = 1
 " let g:syntastic_auto_loc_list = 1
 " let g:syntastic_check_on_open = 1
 " let g:syntastic_check_on_wq = 0
-" 
+"
 " let g:syntastic_ruby_exec = '~/.rubies/ruby-2.3.1/bin/ruby'
 " let g:syntastic_ruby_checkers = [ 'mri' ] ", 'rubocop', 'rubylint' ]
 let g:syntastic_javascript_checkers = ['eslint']
@@ -226,7 +228,7 @@ noremap <leader>t exec "ruby -e \"require 'erb'; input = ARGF.read;  puts ERB.ne
 vmap gl :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p<CR>
 
 " Open the file on github in the browser
-map <leader>gho :call OpenFileInGitHub()<CR> 
+map <leader>gho :call OpenFileInGitHub()<CR>
 
 " ## Generating templates
 
@@ -241,8 +243,8 @@ nnoremap <leader>tp :<C-U>! ruby ~/code/vim-ruby-macros/bin/filter.rb<CR>
 set pastetoggle=<leader>pas
 
 " Map OSX clipboards - cut, copy paste
-vmap <C-x> :!pbcopy<CR> 
-vmap <C-c> :w !pbcopy<CR><CR> 
+vmap <C-x> :!pbcopy<CR>
+vmap <C-c> :w !pbcopy<CR><CR>
 map <C-v> :read !pbpaste<CR>
 
 " ==============================================================================
