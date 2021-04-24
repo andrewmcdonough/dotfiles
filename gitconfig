@@ -41,7 +41,7 @@
   autosetuprebase = always
 
 [push]
-  default = upstream
+  default = current
 
 [log]
   date = local
