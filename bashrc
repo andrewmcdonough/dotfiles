@@ -30,8 +30,12 @@ export DOCKER_BUILDKIT=1
 PS1='\[\033[01;33m\]\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[\033[01;31m\]$(__git_ps1)\[\033[01;35m\]$\[\033[00m\] '
 
 # I prefer chruby and chgems to rvm or rbenv as they are less magic
+## Load for Mac
 [[ -r /usr/local/opt/chruby/share/chruby/chruby.sh ]] && source "/usr/local/opt/chruby/share/chruby/chruby.sh"
 [[ -r /usr/local/opt/chruby/share/chruby/auto.sh ]] && source "/usr/local/opt/chruby/share/chruby/auto.sh"
+## And Linux
+[[ -r /usr/local/share/chruby/chruby.sh ]] && source "/usr/local/share/chruby/chruby.sh"
+[[ -r /usr/local/share/chruby/auto.sh ]] && source "/usr/local/share/chruby/auto.sh"
 
 # Node Version Manager
 export NVM_DIR="$HOME/.nvm"
