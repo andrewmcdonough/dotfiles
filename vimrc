@@ -104,16 +104,33 @@ endif
 " ==============================================================================
 " # Plug configuration
 
-let g:ale_linters = {
-\ 'javascript': ['eslint'],
-\ 'ruby': ['rubocop', 'ruby'],
-\}
+let g:ale_lint_on_text_changed = 'never'
 
+let g:ale_linters = {
+      \ 'javascript': ['eslint'],
+      \ 'vue': ['eslint'],
+      \ 'ruby': ['rubocop', 'ruby'],
+      \ 'sass': ['sass_lint'],
+      \ 'scss': ['sass_lint'],
+      \}
 let g:ale_fixers = {
-\   '*': ['remove_trailing_lines', 'trim_whitespace'],
-\   'javascript': ['prettier', 'eslint'],
-\   'go': ['golint'],
-\}
+  \   '*': ['remove_trailing_lines', 'trim_whitespace'],
+  \   'javascript': [
+  \       'eslint',
+  \       'prettier',
+  \   ],
+  \   'vue': [
+  \       'eslint',
+  \       'prettier',
+  \   ],
+  \   'ruby': [
+  \       'rubocop',
+  \   ],
+  \   'go': ['golint'],
+  \}
+
+" Map ALEFix command
+map <Leader>f :ALEFix<ENTER>
 
 let g:ale_fix_on_save = 1
 
