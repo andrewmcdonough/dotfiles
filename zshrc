@@ -18,7 +18,7 @@ export ZSH="/Users/amcdonough/.oh-my-zsh"
 # Add wisely, as too many plugins slow down shell startup.
 
 # https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins
-plugins=(git fzf direnv)
+plugins=(git fzf direnv aws)
 
 source $ZSH/oh-my-zsh.sh
 

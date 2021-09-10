@@ -333,5 +333,11 @@ let g:coc_disable_startup_warning = 1
 " exe 'source' "~/dotfiles/coc.vim.config"
 
 
+" ==============================================================================
+" # vim-terraform configuration
+"
+let g:terraform_align=1
+
+
 " Common spelling mistakes
 ab language language
