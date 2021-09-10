@@ -53,6 +53,8 @@ export DYLD_LIBRARY_PATH=/usr/local/mysql/lib:$DYLD_LIBRARY_PATH
 export ANDROID_SDK="/opt/android"
 export DOCKER_BUILDKIT=1
 
+unsetopt hist_verify # Run !! immediately
+
 # Keep aliases in a separate file
 [[ -s "$HOME/.shell_aliases" ]] && source "$HOME/.shell_aliases"
 
@@ -93,6 +95,3 @@ esac
 
 # Use startship prompt: https://starship.rs/
 eval "$(starship init zsh)"
-
-# Default Ruby
-chruby 2.7.0
