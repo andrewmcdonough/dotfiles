@@ -248,12 +248,13 @@ vmap <C-c> :w !pbcopy<CR><CR>
 map <C-v> :read !pbpaste<CR>
 
 " ==============================================================================
-" # Correct typos I make regularly
+" # Correct typos I make regularly, and useful shortcuts
 
 iab identifer identifier
 iab langauge language
 iab langage language
 iab baord board
+iab § #
 
 " ==============================================================================
 " # Functions
