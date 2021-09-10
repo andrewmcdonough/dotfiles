@@ -30,6 +30,9 @@ Plug 'junegunn/fzf.vim'               " Fuzzy finder
 Plug 'liuchengxu/vim-which-key'       " Show available keybindings
 Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
 Plug 'mattn/emmet-vim'                " Templating
+Plug 'mpyatishev/vim-sqlformat'
+Plug 'hashivim/vim-terraform'
+Plug 'pearofducks/ansible-vim'
 "Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 
 " Color Schemes
