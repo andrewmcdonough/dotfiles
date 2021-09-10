@@ -1,0 +1,26 @@
+"complex_modifications": {
+    "parameters": {
+        "basic.to_if_alone_timeout_milliseconds": 1000
+    },
+    "rules": [
+        {
+            "description": "Change section to hash",
+            "manipulators": [
+                {
+                    "from": {
+                        "key_code": "non_us_backslash"
+                    },
+                    "to": [
+                        {
+                            "key_code": "3",
+                            "modifiers": [
+                              "left_option"
+                            ]
+                        }
+                    ],
+                    "type": "basic"
+                }
+            ]
+        }
+    ]
+}
