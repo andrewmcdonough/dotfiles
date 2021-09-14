@@ -48,7 +48,6 @@ export EDITOR=/usr/local/bin/vim
 export BLOCKSIZE=M # so du shows megabytes
 export DISABLE_SPRING=true # I don't like Spring
 export AWS_DEFAULT_REGION=eu-west-1
-export GREP_OPTIONS="--exclude-dir=var/cache"
 export DYLD_LIBRARY_PATH=/usr/local/mysql/lib:$DYLD_LIBRARY_PATH
 export ANDROID_SDK="/opt/android"
 export DOCKER_BUILDKIT=1
