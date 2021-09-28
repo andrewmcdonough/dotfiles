@@ -62,8 +62,9 @@ unsetopt hist_verify # Run !! immediately
 [[ -r /usr/local/opt/chruby/share/chruby/auto.sh ]] && source "/usr/local/opt/chruby/share/chruby/auto.sh"
 
 # Node Version Manager
-export NVM_DIR="$HOME/.nvm"
-[ -r "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
+# TODO: Work out how to make this faster - disabling for noe
+# export NVM_DIR="$HOME/.nvm"
+# [ -r "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
 
 # Don't put secrets in shared config
 [[ -r "$HOME/.secrets/environment" ]] && source "$HOME/.secrets/environment"
