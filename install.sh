@@ -36,3 +36,6 @@ wget -O chruby-0.3.9.tar.gz https://github.com/postmodern/chruby/archive/v0.3.9.
 tar -xzvf chruby-0.3.9.tar.gz
 cd chruby-0.3.9/
 sudo make install
+
+# Install asdf
+git clone https://github.com/asdf-vm/asdf.git ~/.asdf
