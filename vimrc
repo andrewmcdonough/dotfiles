@@ -132,7 +132,7 @@ let g:ale_fixers = {
 " Map ALEFix command
 map <Leader>f :ALEFix<ENTER>
 
-let g:ale_fix_on_save = 1
+let g:ale_fix_on_save = 0
 
 " ## syntastic.vim -  for checking syntax on save
 " set statusline+=%#warningmsg#
