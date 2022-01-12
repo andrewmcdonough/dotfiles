@@ -3,6 +3,7 @@ alias vopen='hdiutil attach ~/vault.dmg && ssh-add ~/.ssh/id_rsa'
 alias kcr='killall -9 Google\ Chrome'
 alias jst='python -mjson.tool'
 alias mystart='mysql.server start'
+alias zreload='source ~/.zshrc'
 
 # AWS aliases
 alias awl='awless'
@@ -36,13 +37,6 @@ alias kgpa='kubectl get pods --all-namepsaces'
 alias krc='kubectl exec -it $(kubectl get pods | grep '"'"'qa-da'"'"' | cut -d '"'"' '"'"' -f 1) bundle exec rails console'
 alias ksh='kubectl exec -it $(kubectl get pods | grep '"'"'qa-da'"'"' | cut -d '"'"' '"'"' -f 1) /bin/sh'
 
-# Not regularly used. Consider deleting
-alias t='task'
-alias lsfs='ls -laSr'
-alias hgr='history | grep'
-alias swag='docker run -d -p 80:8080 swaggerapi/swagger-editor'
-alias rinit='echo 2.6.1 > .ruby-version && chruby'
-
 # To create co-authored text
 alias coauth='printf "Co-authored-by: %s" "$(git log --pretty=format:"%an <%ae>" -1000 | sort | uniq | fzf)" | pbcopy'
 
@@ -56,14 +50,18 @@ alias puml="java -jar ~/bin/plantuml.jar -verbose"
 # My common typos
 alias sl="ls"
 
-# Aliases I don't share on GitHub as they have sensitive information
-[[ -f "$HOME/.unshared_aliases" ]] && source "$HOME/.unshared_aliases"
-
-# Quick help on all aliases
-alias h="cat ~/.shell_aliases ~/.unshared_aliases"
-
 # Terraform
 alias tf="terraform"
 alias tfi="terraform init"
 alias tfp="terraform plan"
 alias tfa="terraform apply"
+
+# Privileges
+alias adminon="/Applications/Privileges.app/Contents/Resources/PrivilegesCLI --add"
+alias adminoff="/Applications/Privileges.app/Contents/Resources/PrivilegesCLI --remove"
+
+# Aliases I don't share on GitHub as they have sensitive information
+[[ -f "$HOME/.unshared_aliases" ]] && source "$HOME/.unshared_aliases"
+
+# Quick help on all aliases
+alias h="cat ~/.shell_aliases ~/.unshared_aliases"
