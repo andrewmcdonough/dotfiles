@@ -1,6 +1,19 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+# Znap
+## Download Znap, if it's not there yet.
+[[ -f ~/Git/zsh-snap/znap.zsh ]] ||
+    git clone --depth 1 -- \
+        https://github.com/marlonrichert/zsh-snap.git ~/Git/zsh-snap
+
+source ~/Git/zsh-snap/znap.zsh  # Start Znap
+
+# `znap source` automatically downloads and starts your plugins.
+znap source marlonrichert/zsh-autocomplete
+# znap source zsh-users/zsh-autosuggestions
+znap source zsh-users/zsh-syntax-highlighting
+
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -27,13 +40,6 @@ source $ZSH/oh-my-zsh.sh
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
 
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 #
@@ -46,7 +52,6 @@ export PATH=/usr/local/bin:/usr/local/opt/curl/bin:/usr/bin:/usr/local/opt/pytho
 
 
 export MANPATH=/usr/local/git/man:/opt/local/share/man:/usr/local/man$MANPATH
-export EDITOR=/usr/local/bin/vim
 export BLOCKSIZE=M # so du shows megabytes
 export DISABLE_SPRING=true # I don't like Spring
 export AWS_DEFAULT_REGION=eu-west-1
@@ -76,6 +81,7 @@ case `uname` in
 'Darwin')
 # Mac specific settings
   export OPERATING_SYSTEM=osx
+  export EDITOR=/usr/local/bin/vim
   export LC_ALL=en_GB.UTF-8
   alias vi='/usr/local/bin/nvim'
   alias ctags='/usr/local/bin/ctags'
@@ -85,6 +91,7 @@ case `uname` in
 'Linux')
 # Linux specific settings
   export OPERATING_SYSTEM=linux
+  export EDITOR=/usr/bin/vi
   alias vi='/usr/bin/vi'
 # keychain id_rsa
 # . ~/.keychain/`uname -n`-sh
