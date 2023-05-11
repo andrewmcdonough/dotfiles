@@ -26,16 +26,20 @@ ln -s -f ~/dotfiles/git-completion.bash ~/.git-completion.bash
 ln -s -f ~/dotfiles/git-prompt.sh ~/.git-prompt.sh
 ln -s -f ~/dotfiles/starship.toml ~/.config/starship.toml
 ln -s -f ~/dotfiles/init.vim ~/.config/nvim/init.vim
+ln -s -f ~/dotfiles/hammerspoon/init.lua .hammerspoon/init.lua
 
 # Install vimplug
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
          https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
+# Install homebrew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
 # Install chruby
-wget -O chruby-0.3.9.tar.gz https://github.com/postmodern/chruby/archive/v0.3.9.tar.gz
-tar -xzvf chruby-0.3.9.tar.gz
-cd chruby-0.3.9/
-sudo make install
+#wget -O chruby-0.3.9.tar.gz https://github.com/postmodern/chruby/archive/v0.3.9.tar.gz
+#tar -xzvf chruby-0.3.9.tar.gz
+#cd chruby-0.3.9/
+#sudo make install
 
 # Install asdf
-git clone https://github.com/asdf-vm/asdf.git ~/.asdf
+#git clone https://github.com/asdf-vm/asdf.git ~/.asdf

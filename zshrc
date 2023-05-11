@@ -83,7 +83,7 @@ case `uname` in
   export OPERATING_SYSTEM=osx
   export EDITOR=/usr/local/bin/vim
   export LC_ALL=en_GB.UTF-8
-  alias vi='/usr/local/bin/nvim'
+  alias vi=nvim
   alias ctags='/usr/local/bin/ctags'
 
 # End Mac specific settings
@@ -115,7 +115,7 @@ eval "$(starship init zsh)"
 #[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 #[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# Activate asdf
-. $HOME/.asdf/asdf.sh
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Activate asdf
+#. $HOME/.asdf/asdf.sh
