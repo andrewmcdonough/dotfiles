@@ -5,7 +5,19 @@ end)
 
 -- Keyboard shortcuts
 
-columns = 9
+
+function send_window(start_column, width_in_columns, total_columns)
+  local win = hs.window.focusedWindow()
+  local f = win:frame()
+  local screen = win:screen()
+  local max = screen:frame()
+
+  f.x = max.w * (start_column / total_columns)
+  f.w = max.w * 2 / 9
+  f.y = 0
+  f.h = max.h
+  win:setFrame(f)
+end
 
 -- Send window to left column (widescreen)
 hs.hotkey.bind({"cmd", "alt", "ctrl"}, "h", function()
