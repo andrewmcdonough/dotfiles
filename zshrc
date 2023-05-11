@@ -99,6 +99,10 @@ case `uname` in
 ;;
 esac
 
+# Make the history behave like bash
+bindkey "$terminfo[kcuu1]" up-history
+bindkey "$terminfo[kcud1]" down-history
+
 # This loads nvm bash_completion
 #[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"
 
@@ -113,3 +117,5 @@ eval "$(starship init zsh)"
 
 # Activate asdf
 . $HOME/.asdf/asdf.sh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
