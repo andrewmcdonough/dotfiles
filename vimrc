@@ -214,6 +214,7 @@ nnoremap <leader>log oRails.logger.debug("*** ")<ESC>hi
 nnoremap <C-p> :Files<CR>
 nnoremap <C-M-p> :Rg<CR>
 nnoremap <C-M-t> ihello<CR>
+nnoremap <leader>b :Buffers<CR>
 
 " ## fzf templating - WIP - not currently working
 
