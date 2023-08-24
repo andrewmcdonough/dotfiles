@@ -119,3 +119,6 @@ eval "$(starship init zsh)"
 
 # Activate asdf
 #. $HOME/.asdf/asdf.sh
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
