@@ -81,7 +81,7 @@ case `uname` in
 'Darwin')
 # Mac specific settings
   export OPERATING_SYSTEM=osx
-  export EDITOR=/usr/local/bin/vim
+  export EDITOR=/opt/homebrew/bin/nvim
   export LC_ALL=en_GB.UTF-8
   alias vi=nvim
   alias ctags='/usr/local/bin/ctags'
