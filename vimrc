@@ -108,7 +108,7 @@ let g:ale_lint_on_text_changed = 'never'
 
 let g:ale_linters = {
       \ 'javascript': ['eslint'],
-      \ 'vue': ['eslint'],
+      \ 'vue': ['eslint', 'prettier'],
       \ 'ruby': ['rubocop', 'ruby'],
       \ 'sass': ['sass_lint'],
       \ 'scss': ['sass_lint'],
