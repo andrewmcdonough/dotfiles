@@ -58,20 +58,12 @@ export AWS_DEFAULT_REGION=eu-west-1
 export DYLD_LIBRARY_PATH=/usr/local/mysql/lib:$DYLD_LIBRARY_PATH
 export ANDROID_SDK="/opt/android"
 export DOCKER_BUILDKIT=1
+#export TWILIO_REGION=ie1
 
 unsetopt hist_verify # Run !! immediately
 
 # Keep aliases in a separate file
 [[ -s "$HOME/.shell_aliases" ]] && source "$HOME/.shell_aliases"
-
-# I prefer chruby and chgems to rvm or rbenv as they are less magic
-[[ -r /usr/local/opt/chruby/share/chruby/chruby.sh ]] && source "/usr/local/opt/chruby/share/chruby/chruby.sh"
-[[ -r /usr/local/opt/chruby/share/chruby/auto.sh ]] && source "/usr/local/opt/chruby/share/chruby/auto.sh"
-
-# Node Version Manager
-# TODO: Work out how to make this faster - disabling for noe
-# export NVM_DIR="$HOME/.nvm"
-# [ -r "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
 
 # Don't put secrets in shared config
 [[ -r "$HOME/.secrets/environment" ]] && source "$HOME/.secrets/environment"
@@ -103,22 +95,39 @@ esac
 bindkey "$terminfo[kcuu1]" up-history
 bindkey "$terminfo[kcud1]" down-history
 
-# This loads nvm bash_completion
-#[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"
-
 # Use startship prompt: https://starship.rs/
 eval "$(starship init zsh)"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Version managers
+
+# I prefer chruby and chgems to rvm or rbenv as they are less magic
+# Commented out while I try asdf for Ruby
+#[[ -r /usr/local/opt/chruby/share/chruby/chruby.sh ]] && source "/usr/local/opt/chruby/share/chruby/chruby.sh"
+#[[ -r /usr/local/opt/chruby/share/chruby/auto.sh ]] && source "/usr/local/opt/chruby/share/chruby/auto.sh"
+
+# Node Version Manager
+# TODO: Work out how to make this faster - disabling for noe
+# export NVM_DIR="$HOME/.nvm"
+# [ -r "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
 
 # NVM - probably remove for asdf
 #export NVM_DIR="$HOME/.config/nvm"
 #[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 #[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+#
+# This loads nvm bash_completion
+#[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"
+#
+# Commented out to try .asdf
+#export PYENV_ROOT="$HOME/.pyenv"
+#command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+#eval "$(pyenv init -)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Activate asdf
-#. $HOME/.asdf/asdf.sh
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+. $HOME/.asdf/asdf.sh
+. $HOME/.asdf/completions/asdf.bash
+eval 
+TWILIO_AC_ZSH_SETUP_PATH=/Users/amcdonough/.twilio-cli/autocomplete/zsh_setup && test -f $TWILIO_AC_ZSH_SETUP_PATH && source $TWILIO_AC_ZSH_SETUP_PATH; # twilio autocomplete setup
