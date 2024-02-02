@@ -39,3 +39,4 @@ opt.showmatch = true
 opt.colorcolumn = "120"
 opt.list = true
 opt.iskeyword:append("-")
+opt.swapfile = false
