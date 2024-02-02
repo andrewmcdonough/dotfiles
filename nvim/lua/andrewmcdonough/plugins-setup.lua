@@ -16,7 +16,9 @@ require('lazy').setup({
   -- Fuzzy finder
   {'nvim-treesitter/nvim-treesitter', build = ':TSUpdate'},
   'folke/which-key.nvim',                -- Show available keybindings
-  'nvim-telescope/telescope.nvim', tag = '0.1.5', dependencies = { 'nvim-lua/plenary.nvim' },
+  'nvim-telescope/telescope.nvim', tag = '0.1.5', dependencies = { 'nvim-lua/plenary.nvim' }, -- Fuzzy finder
+  { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+  {'stevearc/dressing.nvim', tag = '0.1.0'}, -- Dressing - for nicer UI
   'lewis6991/gitsigns.nvim',             --  Git signs
   'nvim-tree/nvim-tree.lua',             --  File tree
   'nvim-tree/nvim-web-devicons',         --  File tree icons
