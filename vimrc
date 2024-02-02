@@ -1,11 +1,7 @@
 " ==============================================================================
-" # Pluginss
+" # DEPRECATED - I no longer use this file. I've moved to using neovim, which
+" is configured with nvim/init.vim
 
-" I've moved from vundle to vim-plug
-"
-" See repo for installation instuctions
-"
-" https://github.com/junegunn/vim-plug
 call plug#begin('~/.vim/plugged')
 
 " Plug 'gmarik/vundle'                  " Package manager
