@@ -19,8 +19,9 @@ require('lazy').setup({
   'nvim-telescope/telescope.nvim', tag = '0.1.5', dependencies = { 'nvim-lua/plenary.nvim' }, -- Fuzzy finder
   { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
   {'stevearc/dressing.nvim', tag = '0.1.0'}, -- Dressing - for nicer UI
+  {'hrsh7th/nvim-cmp', event = "InsertEnter"}, -- Autocompletion
   'lewis6991/gitsigns.nvim',             --  Git signs
-  'nvim-tree/nvim-tree.lua',             --  File tree
+  -- 'nvim-tree/nvim-tree.lua',             --  File tree
   'nvim-tree/nvim-web-devicons',         --  File tree icons
   'nvim-lualine/lualine.nvim',           --  Status line
   'tpope/vim-fugitive',                  --  Git commands

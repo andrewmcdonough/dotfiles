@@ -3,11 +3,11 @@ vim.g.mapleader = " "
 local keymap = vim.keymap
 
 -- Moving around buffers and tabs
-keymap.set("n", "<C-n>", ":bprev<CR>") -- Previous buffer
-keymap.set("n", "<C-m>", ":bnext<CR>") -- Next buffer
-keymap.set("n", "{", ":tabprev<CR>")   -- Previous tab
-keymap.set("n", "}", ":tabnext<CR>")   -- Next tab
-keymap.set("n", "nt", ":tabnew<CR>")   -- Next tab
+keymap.set("n", "<C-n>", ":bprev<CR>")        -- Previous buffer
+keymap.set("n", "<C-m>", ":bnext<CR>")        -- Next buffer
+keymap.set("n", "{", ":tabprev<CR>")          -- Previous tab
+keymap.set("n", "}", ":tabnext<CR>")          -- Next tab
+keymap.set("n", "<leader>nt", ":tabnew<CR>")  -- New tab
 
 -- ALE
 keymap.set("n", "<leader>af", ":ALELint<CR>")
