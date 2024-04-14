@@ -27,12 +27,11 @@ opt.backspace = "indent,eol,start"
 opt.clipboard:append("unnamedplus")
 
 -- splits
---
 opt.splitbelow = true
 opt.splitright = true
 
 -- other options
-opt.wrap = false
+opt.wrap = true
 opt.encoding = "utf-8"
 opt.visualbell = true
 opt.showmatch = true
