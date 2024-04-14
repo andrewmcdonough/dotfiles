@@ -26,17 +26,8 @@ function _G.create_rspec_file()
 require 'rails_helper'
 
 RSpec.describe %s do
-  subject { described_class.new }
 
-  it "" do
-  end
-end
-]], class_name)
-    vim.api.nvim_buf_set_lines(0, 0, -1, false, vim.split(boilerplate, "\n"))
-  end
-end
-end
-]], class_name)
+end]], class_name)
     vim.api.nvim_buf_set_lines(0, 0, -1, false, vim.split(boilerplate, "\n"))
   end
 end
