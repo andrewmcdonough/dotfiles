@@ -10,11 +10,17 @@ keymap.set("n", "}", ":tabnext<CR>")          -- Next tab
 keymap.set("n", "<leader>nt", ":tabnew<CR>")  -- New tab
 
 -- ALE
-keymap.set("n", "<leader>af", ":ALELint<CR>")
+keymap.set("n", "<leader>af", ":ALEFix<CR>")
+keymap.set("n", "<leader>al", ":ALELint<CR>")
+
+
+-- Ruby
+keymap.set("n", "<leader>rtt", ':silent !tmux send-keys -t:3 \'bundle exec rspec %\' C-m<CR>', { noremap = true, silent = true })
 
 -- Pry
 keymap.set("n", "<leader>pry", 'orequire "pry"; binding.pry<ESC>^')
 keymap.set("n", "<leader>prr", 'orequire "pry"; binding.pry_remote<ESC>^')
+keymap.set("n", "<leader>prd", 'oRails.logger.debug("[DEBUG] ")<ESC>hi')
 
 -- fzf - moving to telescope
 keymap.set("n", "<C-p>", ":Files<CR>")
@@ -37,6 +43,10 @@ keymap.set('n', '<Leader>ca', vim.lsp.buf.code_action, {})
 keymap.set('n', 'gd', vim.lsp.buf.definition, {})
 keymap.set('n', 'gi', vim.lsp.buf.implementation, {})
 -- keymap.set('n', 'K', vim.lsp.buf.hover, {})
+
+-- Git
+keymap.set('n', '<leader>gb', ":Git blame<CR>")
+keymap.set('n', '<leader>gt', ":Gitsigns toggle_current_line_blame<CR>")
 
 -- barbar
 local map = vim.api.nvim_set_keymap
