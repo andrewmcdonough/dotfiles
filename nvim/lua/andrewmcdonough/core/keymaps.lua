@@ -2,6 +2,9 @@ vim.g.mapleader = " "
 
 local keymap = vim.keymap
 
+-- Neovim
+keymap.set("n", "<leader>vrr", ":lua reload_config()<CR>", { noremap = true, silent = true })  -- Reload nvim config
+
 -- Moving around buffers and tabs
 keymap.set("n", "<C-n>", ":bprev<CR>")        -- Previous buffer
 keymap.set("n", "<C-m>", ":bnext<CR>")        -- Next buffer
@@ -16,6 +19,7 @@ keymap.set("n", "<leader>al", ":ALELint<CR>")
 
 -- Ruby
 keymap.set("n", "<leader>rtt", ':silent !tmux send-keys -t:3 \'bundle exec rspec %\' C-m<CR>', { noremap = true, silent = true })
+keymap.set("n", '<leader>rtc', ':lua create_rspec_file()<CR>', { noremap = true, silent = true })
 
 -- Pry
 keymap.set("n", "<leader>pry", 'orequire "pry"; binding.pry<ESC>^')

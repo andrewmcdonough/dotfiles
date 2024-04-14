@@ -25,7 +25,7 @@ require('lazy').setup({
   'nvim-tree/nvim-web-devicons',         --  File tree icons
   'nvim-lualine/lualine.nvim',           --  Status line
   'tpope/vim-fugitive',                  --  Git commands
-  'tpope/vim-sensible',                  --  A sensible set of vim defaults
+  -- 'tpope/vim-sensible',                  --  A sensible set of vim defaults
   'kana/vim-textobj-user',               --  Create your own text objects
   'tmhedberg/matchit',                   --  Extended block matching
   'mileszs/ack.vim',                     --  For searching for files
