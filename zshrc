@@ -41,7 +41,6 @@ case `uname` in
 # Mac specific settings
   export OPERATING_SYSTEM=osx
   export EDITOR=/opt/homebrew/bin/nvim
-  export LC_ALL=en_GB.UTF-8
   alias vi=nvim
 # End Mac specific settings
 ;;
@@ -58,6 +57,20 @@ esac
 bindkey "$terminfo[kcuu1]" up-history
 bindkey "$terminfo[kcud1]" down-history
 
+aws-profile () {
+  if [ $# -eq 0 ]
+  then
+    echo "$AWS_PROFILE"
+    return 0
+  fi
+  if [[ "$1" == "clear" ]]
+  then
+    unset AWS_PROFILE
+  else
+    export AWS_PROFILE="$1"
+  fi
+}
+
 # Use startship prompt: https://starship.rs/
 eval "$(starship init zsh)"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
@@ -70,3 +83,4 @@ eval "$(starship init zsh)"
 . $HOME/.asdf/completions/asdf.bash
 eval 
 TWILIO_AC_ZSH_SETUP_PATH=/Users/amcdonough/.twilio-cli/autocomplete/zsh_setup && test -f $TWILIO_AC_ZSH_SETUP_PATH && source $TWILIO_AC_ZSH_SETUP_PATH; # twilio autocomplete setup
+if [ -f "/Users/amcdonough/.config/fabric/fabric-bootstrap.inc" ]; then . "/Users/amcdonough/.config/fabric/fabric-bootstrap.inc"; fi
