@@ -24,10 +24,7 @@ export LANG=en_GB.UTF-8
 
 export GOPATH=$HOME/go
 export NODE_ENV=development
-#export PATH=/usr/local/bin:/usr/local/opt/curl/bin:/usr/bin:/usr/local/opt/python/libexec/bin:/usr/local/bin/:/opt/local/bin:/opt/local/sbin:/usr/local/sbin:/opt/android/platform-tools:/opt/android/tools:/usr/local/mysql/bin:/var/lib/gems/1.8/bin:$HOME/bin:/usr/local/opt/icu4c/bin:$HOME/.fastlane/bin:$GOPATH/bin:/usr/local/anaconda3/bin:$PATH
-export PATH=/usr/local/bin:/usr/bin:/usr/local/sbin:$HOME/bin:$GOPATH/bin:/opt/homebrew/bin/:$PATH
-
-#export MANPATH=/usr/local/git/man:/opt/local/share/man:/usr/local/man$MANPATH
+export PATH=/opt/homebrew/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:$HOME/bin:$GOPATH/bin:/opt/homebrew/bin/:$HOME/.local/bin:$PATH
 export BLOCKSIZE=M # so du shows megabytes
 export AWS_DEFAULT_REGION=eu-west-1
 export DYLD_LIBRARY_PATH=/usr/local/mysql/lib:$DYLD_LIBRARY_PATH
