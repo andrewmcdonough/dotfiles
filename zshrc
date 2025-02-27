@@ -80,7 +80,11 @@ eval "$(starship init zsh)"
 
 # Activate asdf for version management
 . $HOME/.asdf/asdf.sh
-. $HOME/.asdf/completions/asdf.bash
+
+fpath=(${ASDF_DIR}/completions $fpath)
+autoload -Uz compinit
+compinit
+
 eval 
 TWILIO_AC_ZSH_SETUP_PATH=/Users/amcdonough/.twilio-cli/autocomplete/zsh_setup && test -f $TWILIO_AC_ZSH_SETUP_PATH && source $TWILIO_AC_ZSH_SETUP_PATH; # twilio autocomplete setup
 if [ -f "/Users/amcdonough/.config/fabric/fabric-bootstrap.inc" ]; then . "/Users/amcdonough/.config/fabric/fabric-bootstrap.inc"; fi
