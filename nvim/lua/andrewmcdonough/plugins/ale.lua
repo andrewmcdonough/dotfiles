@@ -14,7 +14,9 @@ vim.g.ale_linters = {
 vim.g.ale_fixers = {
     ['*'] = {'remove_trailing_lines', 'trim_whitespace'},
     javascript = {'eslint', 'prettier'},
-    vue = {'eslint', 'prettier'},
+    typescript = {'eslint', 'prettier'},
+    vue = {'eslint', 'prettier', 'stylelint'},
     ruby = {'rubocop'},
     go = {'golint'},
+    scss = {'stylelint'},
 }

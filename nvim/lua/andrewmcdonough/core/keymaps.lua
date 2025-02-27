@@ -41,6 +41,10 @@ keymap.set('n', '<leader>fl', telescope.lsp_references, {})
 -- NvimTree
 keymap.set('n', '<leader>t', ':NvimTreeFindFileToggle<CR>')
 
+
+-- Browsing files
+keymap.set('n', '<leader>ex', ':Explore<CR>', {})
+
 -- Mason
 keymap.set('n', '<Leader>rn', vim.lsp.buf.rename)
 keymap.set('n', '<Leader>ca', vim.lsp.buf.code_action, {})

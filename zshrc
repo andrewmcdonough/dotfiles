@@ -84,3 +84,9 @@ eval "$(starship init zsh)"
 eval 
 TWILIO_AC_ZSH_SETUP_PATH=/Users/amcdonough/.twilio-cli/autocomplete/zsh_setup && test -f $TWILIO_AC_ZSH_SETUP_PATH && source $TWILIO_AC_ZSH_SETUP_PATH; # twilio autocomplete setup
 if [ -f "/Users/amcdonough/.config/fabric/fabric-bootstrap.inc" ]; then . "/Users/amcdonough/.config/fabric/fabric-bootstrap.inc"; fi
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/amcdonough/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/amcdonough/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/amcdonough/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/amcdonough/Downloads/google-cloud-sdk/completion.zsh.inc'; fi

@@ -36,7 +36,7 @@
   am = commit --amend
 
 [core]
-  editor = /usr/bin/vim
+  editor = /opt/homebrew/bin/nvim
   excludesfile = ~/.gitignore
 
 [branch]

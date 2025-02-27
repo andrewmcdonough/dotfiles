@@ -20,12 +20,13 @@ require('lazy').setup({
   { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
   {'stevearc/dressing.nvim', tag = '0.1.0'}, -- Dressing - for nicer UI
   {'hrsh7th/nvim-cmp', event = "InsertEnter"}, -- Autocompletion
+  'hrsh7th/cmp-nvim-lsp',                -- LSP source for nvim-cmp
   'lewis6991/gitsigns.nvim',             --  Git signs
-  -- 'nvim-tree/nvim-tree.lua',             --  File tree
+  -- 'nvim-tree/nvim-tree.lua',          --  File tree
   'nvim-tree/nvim-web-devicons',         --  File tree icons
   'nvim-lualine/lualine.nvim',           --  Status line
   'tpope/vim-fugitive',                  --  Git commands
-  -- 'tpope/vim-sensible',                  --  A sensible set of vim defaults
+  -- 'tpope/vim-sensible',               --  A sensible set of vim defaults
   'kana/vim-textobj-user',               --  Create your own text objects
   'tmhedberg/matchit',                   --  Extended block matching
   'mileszs/ack.vim',                     --  For searching for files
@@ -43,6 +44,7 @@ require('lazy').setup({
   'williamboman/mason.nvim',             --  Mason
   'williamboman/mason-lspconfig.nvim',   --  Mason LSP config
   'neovim/nvim-lspconfig',               --  LSP
+  'VonHeikemen/lsp-zero.nvim',           --  LSP Zero
   'tpope/vim-rails',                     --  Rails
   'thoughtbot/vim-rspec',                --  Rspec
   'posva/vim-vue',                       --  Vue
