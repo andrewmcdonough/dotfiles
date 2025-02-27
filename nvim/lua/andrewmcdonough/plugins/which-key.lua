@@ -1,13 +1,14 @@
-local status_ok, which_key = pcall(require, "which-key")
-if not status_ok then
-  return
-end
+return {
+  'folke/which-key.nvim',
+  event = "VeryLazy",
+  config = function()
+    vim.o.timeout = true
+    vim.o.timeoutlen = 300
 
-vim.o.timeout = true
-vim.o.timeoutlen = 300
-
-which_key.setup {
-  window = {
-    border = "single",
-  },
+    require("which-key").setup({
+      window = {
+        border = "single",
+      },
+    })
+  end,
 }
