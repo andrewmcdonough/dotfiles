@@ -6,6 +6,7 @@ return {
   { import = "andrewmcdonough.plugins.which-key" },
   { import = "andrewmcdonough.plugins.gitsigns" },
   { import = "andrewmcdonough.plugins.mason" },
+  { import = "andrewmcdonough.plugins.snacks" },
 
   -- Additional plugins that don't need their own file
   { 'nvim-lua/plenary.nvim' },
