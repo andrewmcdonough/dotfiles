@@ -10,7 +10,6 @@ return {
   -- Additional plugins that don't need their own file
   { 'nvim-lua/plenary.nvim' },
   { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
-  { 'stevearc/dressing.nvim', tag = '0.1.0' },
   { 'tpope/vim-fugitive' },
   { 'kana/vim-textobj-user' },
   { 'mileszs/ack.vim' },
