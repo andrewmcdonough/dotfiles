@@ -22,6 +22,15 @@ return {
       },
     })
 
+    vim.api.nvim_create_user_command('Rg', function(opts)
+      if opts.args and opts.args ~= "" then
+        require('telescope.builtin').grep_string({ search = opts.args })
+      else
+        require('telescope.builtin').live_grep()
+      end
+    end, { nargs = '?', desc = 'Search with ripgrep via Telescope' })
+
+
     telescope.load_extension("fzf")
   end,
   keys = {
@@ -30,5 +39,7 @@ return {
     { '<leader>fb', function() require('telescope.builtin').buffers() end, desc = "Find Buffers" },
     { '<leader>fh', function() require('telescope.builtin').help_tags() end, desc = "Help Tags" },
     { '<leader>fl', function() require('telescope.builtin').lsp_references() end, desc = "LSP References" },
+    { '<C-p>', function() require('telescope.builtin').find_files() end, desc = "Find Files (FZF)" },
+    { '<leader>b', function() require('telescope.builtin').buffers() end, desc = "Find Buffers (FZF)" },
   },
 }
