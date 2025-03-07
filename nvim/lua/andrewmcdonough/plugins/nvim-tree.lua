@@ -33,6 +33,9 @@ return {
         open_file = {
           -- Close the tree when opening a file
           quit_on_open = true,
+          window_picker = {
+            enable = false,
+          },
         },
       },
 
