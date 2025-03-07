@@ -1,13 +1,4 @@
 return {
-  -- Core plugins
-  { import = "andrewmcdonough.plugins.ale" },
-  { import = "andrewmcdonough.plugins.telescope" },
-  { import = "andrewmcdonough.plugins.lualine" },
-  { import = "andrewmcdonough.plugins.which-key" },
-  { import = "andrewmcdonough.plugins.gitsigns" },
-  { import = "andrewmcdonough.plugins.mason" },
-  { import = "andrewmcdonough.plugins.snacks" },
-
   -- Additional plugins that don't need their own file
   { 'nvim-lua/plenary.nvim' },
   { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
