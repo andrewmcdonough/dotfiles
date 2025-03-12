@@ -37,6 +37,9 @@ return {
             enable = false,
           },
         },
+        change_dir = {
+          enable = false,
+        },
       },
 
       renderer = {
