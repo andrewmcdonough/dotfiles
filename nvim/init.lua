@@ -10,6 +10,7 @@ require('andrewmcdonough.plugins-setup')
 require('andrewmcdonough.core.keymaps')
 require('andrewmcdonough.core.options')
 require('andrewmcdonough.core.colorscheme')
+require('andrewmcdonough.core.debugging')
 
 -- Load custom functions
 require('andrewmcdonough.functions.ruby')

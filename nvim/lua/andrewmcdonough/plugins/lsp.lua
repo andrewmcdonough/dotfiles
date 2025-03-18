@@ -53,9 +53,13 @@ return {
         vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
         vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, opts)
         vim.keymap.set('n', '<leader>f', function() vim.lsp.buf.format({ async = true }) end, opts)
+
+        -- Add diagnostic navigation
+        vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
+        vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
+        vim.keymap.set('n', '<leader>d', vim.diagnostic.open_float, opts)
       end
 
-      -- Server configurations
       -- Configure lua_ls for Neovim Lua API
       lspconfig.lua_ls.setup({
         capabilities = capabilities,
@@ -76,10 +80,68 @@ return {
         },
       })
 
+      -- Ruby LSP specific configuration
+      lspconfig.ruby_lsp.setup({
+        capabilities = capabilities,
+        on_attach = on_attach,
+        cmd = { "ruby-lsp" },
+        filetypes = { "ruby" },
+        root_dir = lspconfig.util.root_pattern("Gemfile", ".git"),
+        init_options = {
+          formatter = "auto",
+        },
+        settings = {
+          rubylsp = {
+            diagnostics = true,
+            formatter = {
+              enable = true,
+            },
+            rubyVersionManager = "auto",
+          }
+        }
+      })
+
+      -- TypeScript configuration
+      lspconfig.ts_ls.setup({
+        capabilities = capabilities,
+        on_attach = on_attach,
+        filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact" },
+        root_dir = lspconfig.util.root_pattern("package.json", "tsconfig.json", ".git"),
+      })
+
+      -- Vue configuration (Volar)
+      lspconfig.volar.setup({
+        capabilities = capabilities,
+        on_attach = on_attach,
+        filetypes = { "vue" },
+      })
+
+      lspconfig.ruby_lsp.setup({
+        capabilities = capabilities,
+        on_attach = on_attach,
+        cmd = { "ruby-lsp" },
+        filetypes = { "ruby" },
+        root_dir = lspconfig.util.root_pattern("Gemfile", ".git"),
+        init_options = {
+          formatter = "auto",  -- Use the Ruby LSP's default formatter
+        },
+        settings = {
+          -- Ruby LSP specific settings
+          rubylsp = {
+            diagnostics = true,
+            -- Enable formatter if needed
+            formatter = {
+              enable = true,
+            },
+            -- Important for Rails projects
+            rubyVersionManager = "auto",
+          }
+        }
+      })
+
       -- Setup other language servers with default config
       local servers = {
-        -- Add your frequently used language servers
-        -- 'tsserver', 'pyright', 'ruby_ls', etc.
+        -- Add any other language servers here that you want with default config
       }
 
       for _, server in ipairs(servers) do

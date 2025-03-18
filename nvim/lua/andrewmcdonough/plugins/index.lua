@@ -12,7 +12,7 @@ return {
   -- { 'junegunn/fzf.vim' },
   -- { 'mpyatishev/vim-sqlformat' },
   -- { 'pearofducks/ansible-vim' },
-  -- { 'tpope/vim-rails' },
+  { 'tpope/vim-rails' },
   -- { 'thoughtbot/vim-rspec' },
   -- { 'posva/vim-vue' },
   -- { 'pangloss/vim-javascript' },
