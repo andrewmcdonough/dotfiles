@@ -35,6 +35,7 @@ map("n", "gi", "<Cmd>lua vim.lsp.buf.implementation()<CR>", opts)
 -- Git
 map("n", "<leader>gb", ":Git blame<CR>", opts)
 map("n", "<leader>gt", ":Gitsigns toggle_current_line_blame<CR>", opts)
+map("n", "<leader>gho",":GBrowse<CR>", opts)
 
 -- Move to previous/next
 map("n", "<A-,>", "<Cmd>BufferPrevious<CR>", opts)

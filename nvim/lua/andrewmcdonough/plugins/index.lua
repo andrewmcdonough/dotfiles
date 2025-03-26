@@ -7,6 +7,7 @@ return {
   { 'vim-scripts/tComment' },
   { 'tpope/vim-surround' },
   { 'tpope/vim-abolish' },
+  { 'tpope/vim-rhubarb' },
   -- { 'mileszs/ack.vim' },
   -- { 'junegunn/fzf' },
   -- { 'junegunn/fzf.vim' },
