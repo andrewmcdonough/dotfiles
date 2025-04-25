@@ -24,8 +24,8 @@ require("lazy").setup("andrewmcdonough.plugins", {
     rtp = {
       disabled_plugins = {
         "gzip",
-        "matchit",
-        "matchparen",
+        -- "matchit",
+        -- "matchparen",
         "tarPlugin",
         "tohtml",
         "tutor",

@@ -8,18 +8,22 @@ return {
   { 'tpope/vim-surround' },
   { 'tpope/vim-abolish' },
   { 'tpope/vim-rhubarb' },
+  { 'vim-ruby/vim-ruby' },
+  { 'tpope/vim-rails' },
+  { 'mattn/emmet-vim' },
+  { 'hashivim/vim-terraform' },
+  { 'github/copilot.vim' },
+
+  -- PLugins I'm testing out removing
+  -- { 'thoughtbot/vim-rspec' },
+  -- { 'posva/vim-vue' },
+  -- { 'pangloss/vim-javascript' },
   -- { 'mileszs/ack.vim' },
   -- { 'junegunn/fzf' },
   -- { 'junegunn/fzf.vim' },
   -- { 'mpyatishev/vim-sqlformat' },
   -- { 'pearofducks/ansible-vim' },
-  { 'tpope/vim-rails' },
-  -- { 'thoughtbot/vim-rspec' },
-  -- { 'posva/vim-vue' },
-  -- { 'pangloss/vim-javascript' },
-  { 'mattn/emmet-vim' },
-  { 'hashivim/vim-terraform' },
-  { 'github/copilot.vim' },
+
 
   -- Colorschemes
   { 'chriskempson/base16-vim' },
