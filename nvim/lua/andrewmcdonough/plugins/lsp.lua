@@ -80,27 +80,6 @@ return {
         },
       })
 
-      -- Ruby LSP specific configuration
-      lspconfig.ruby_lsp.setup({
-        capabilities = capabilities,
-        on_attach = on_attach,
-        cmd = { "ruby-lsp" },
-        filetypes = { "ruby" },
-        root_dir = lspconfig.util.root_pattern("Gemfile", ".git"),
-        init_options = {
-          formatter = "auto",
-        },
-        settings = {
-          rubylsp = {
-            diagnostics = true,
-            formatter = {
-              enable = true,
-            },
-            rubyVersionManager = "auto",
-          }
-        }
-      })
-
       -- TypeScript configuration
       lspconfig.ts_ls.setup({
         capabilities = capabilities,
@@ -116,6 +95,7 @@ return {
         filetypes = { "vue" },
       })
 
+      -- Ruby LSP specific configuration
       lspconfig.ruby_lsp.setup({
         capabilities = capabilities,
         on_attach = on_attach,
