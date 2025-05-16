@@ -1,15 +1,15 @@
 # Znap
 ## Download Znap, if it's not there yet.
-[[ -f ~/Git/zsh-snap/znap.zsh ]] ||
-    git clone --depth 1 -- \
-        https://github.com/marlonrichert/zsh-snap.git ~/Git/zsh-snap
+#[[ -f ~/Git/zsh-snap/znap.zsh ]] ||
+#    git clone --depth 1 -- \
+#        https://github.com/marlonrichert/zsh-snap.git ~/Git/zsh-snap
 
-source ~/Git/zsh-snap/znap.zsh  # Start Znap
+#source ~/Git/zsh-snap/znap.zsh  # Start Znap
 
 # `znap source` automatically downloads and starts your plugins.
 # znap source marlonrichert/zsh-autocomplete
 # znap source zsh-users/zsh-autosuggestions
-znap source zsh-users/zsh-syntax-highlighting
+#znap source zsh-users/zsh-syntax-highlighting
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -24,7 +24,7 @@ export LANG=en_GB.UTF-8
 
 export GOPATH=$HOME/go
 export NODE_ENV=development
-export PATH=/opt/homebrew/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:$HOME/bin:$GOPATH/bin:/opt/homebrew/bin/:$HOME/.local/bin:$PATH
+export PATH=/opt/homebrew/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:$HOME/bin:$GOPATH/bin:$HOME/.local/bin:$PATH
 export BLOCKSIZE=M # so du shows megabytes
 export AWS_DEFAULT_REGION=eu-west-1
 export DYLD_LIBRARY_PATH=/usr/local/mysql/lib:$DYLD_LIBRARY_PATH
@@ -36,7 +36,7 @@ unsetopt hist_verify # Run !! immediately
 [[ -s "$HOME/.shell_aliases" ]] && source "$HOME/.shell_aliases"
 
 # OS Dependent
-case `uname` in
+case "$(uname)" in
 'Darwin')
 # Mac specific settings
   export OPERATING_SYSTEM=osx
@@ -73,24 +73,31 @@ aws-profile () {
 
 # Use startship prompt: https://starship.rs/
 eval "$(starship init zsh)"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# FZF
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Activate asdf for version management
 . $HOME/.asdf/asdf.sh
 
+# Load asdf completions for zsh
 fpath=(${ASDF_DIR}/completions $fpath)
-autoload -Uz compinit
-compinit
+autoload -Uz compinit && compinit
 
-eval 
-TWILIO_AC_ZSH_SETUP_PATH=/Users/amcdonough/.twilio-cli/autocomplete/zsh_setup && test -f $TWILIO_AC_ZSH_SETUP_PATH && source $TWILIO_AC_ZSH_SETUP_PATH; # twilio autocomplete setup
-if [ -f "/Users/amcdonough/.config/fabric/fabric-bootstrap.inc" ]; then . "/Users/amcdonough/.config/fabric/fabric-bootstrap.inc"; fi
+# Twilio completions
+TWILIO_AC_ZSH_SETUP_PATH=$HOME/.twilio-cli/autocomplete/zsh_setup
+if [ -f $TWILIO_AC_ZSH_SETUP_PATH ]; then
+  source $TWILIO_AC_ZSH_SETUP_PATH
+fi
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/amcdonough/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/amcdonough/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+# Bootstrap Fabric
+if [ -f "$HOME/.config/fabric/fabric-bootstrap.inc" ]; then
+  source "$HOME/.config/fabric/fabric-bootstrap.inc"
+fi
 
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/amcdonough/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/amcdonough/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+# Google Cloud SDK from Homebrew
+if [ -f '/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc' ]; then
+  source '/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
+fi
+
+# Google Cloud SDK shell command completion
+if [ -f '/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc' ]; then
+  source '/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
+fi
