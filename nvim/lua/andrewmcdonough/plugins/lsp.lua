@@ -106,15 +106,20 @@ return {
           formatter = "auto",  -- Use the Ruby LSP's default formatter
         },
         settings = {
-          -- Ruby LSP specific settings
           rubylsp = {
             diagnostics = true,
-            -- Enable formatter if needed
             formatter = {
               enable = true,
             },
-            -- Important for Rails projects
-            rubyVersionManager = "auto",
+            rubyVersionManager = "asdf",
+            includePaths = {
+              -- ASDF Ruby standard library paths
+              vim.fn.expand("~/.asdf/installs/ruby/*/lib/ruby/*/"),
+              -- ASDF Ruby gem paths
+              vim.fn.expand("~/.asdf/installs/ruby/*/lib/ruby/gems/*/gems/*/lib"),
+              -- Project bundled gems
+              vim.fn.getcwd() .. "/vendor/bundle/ruby/*/gems/*/lib",
+            }
           }
         }
       })
