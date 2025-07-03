@@ -38,6 +38,7 @@
 [core]
   editor = /opt/homebrew/bin/nvim
   excludesfile = ~/.gitignore
+	pager = diff-so-fancy | less --tabs=4 -RFXS
 
 [branch]
   autosetuprebase = always
@@ -52,3 +53,5 @@
   required = true
   clean = git-lfs clean -- %f
   smudge = git-lfs smudge -- %f
+[interactive]
+	diffFilter = diff-so-fancy --patch

@@ -1,15 +1,15 @@
 # Znap
 ## Download Znap, if it's not there yet.
-#[[ -f ~/Git/zsh-snap/znap.zsh ]] ||
-#    git clone --depth 1 -- \
-#        https://github.com/marlonrichert/zsh-snap.git ~/Git/zsh-snap
+[[ -f ~/Git/zsh-snap/znap.zsh ]] ||
+    git clone --depth 1 -- \
+        https://github.com/marlonrichert/zsh-snap.git ~/Git/zsh-snap
 
-#source ~/Git/zsh-snap/znap.zsh  # Start Znap
+source ~/Git/zsh-snap/znap.zsh  # Start Znap
 
 # `znap source` automatically downloads and starts your plugins.
 # znap source marlonrichert/zsh-autocomplete
-# znap source zsh-users/zsh-autosuggestions
-#znap source zsh-users/zsh-syntax-highlighting
+znap source zsh-users/zsh-autosuggestions
+znap source zsh-users/zsh-syntax-highlighting
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
