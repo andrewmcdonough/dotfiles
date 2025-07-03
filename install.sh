@@ -27,6 +27,7 @@ ln -s -f ~/dotfiles/git-prompt.sh ~/.git-prompt.sh
 ln -s -f ~/dotfiles/starship.toml ~/.config/starship.toml
 ln -s -f ~/dotfiles/init.vim ~/.config/nvim/init.vim
 ln -s -f ~/dotfiles/hammerspoon/init.lua .hammerspoon/init.lua
+ln -s -f ~/dotfiles/ghostty_config ~/Library/Application\ Support/com.mitchellh.ghostty/config
 
 # Install vimplug
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \

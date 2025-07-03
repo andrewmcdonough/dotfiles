@@ -1,0 +1,5 @@
+# https://ghostty.org/docs/config/reference
+# Cmd-Shift-, to reload
+background = 282c34
+macos-non-native-fullscreen = true
+window-padding-x = 10
