@@ -39,3 +39,12 @@ opt.colorcolumn = "120"
 opt.list = true
 opt.iskeyword:append("-")
 opt.swapfile = false
+
+-- auto-reload buffers when files change
+opt.autoread = true
+
+-- Set up autocommand to trigger buffer reload
+vim.api.nvim_create_autocmd({"FocusGained", "BufEnter", "CursorHold", "CursorHoldI"}, {
+  pattern = "*",
+  command = "if mode() != 'c' | checktime | endif",
+})
