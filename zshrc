@@ -26,7 +26,6 @@ export GOPATH=$HOME/go
 export NODE_ENV=development
 export PATH=/opt/homebrew/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:$HOME/bin:$GOPATH/bin:$HOME/.local/bin:$PATH
 export BLOCKSIZE=M # so du shows megabytes
-export AWS_DEFAULT_REGION=eu-west-1
 export DYLD_LIBRARY_PATH=/usr/local/mysql/lib:$DYLD_LIBRARY_PATH
 export DOCKER_BUILDKIT=1
 
@@ -56,20 +55,6 @@ esac
 # Make the history behave like bash
 bindkey "$terminfo[kcuu1]" up-history
 bindkey "$terminfo[kcud1]" down-history
-
-aws-profile () {
-  if [ $# -eq 0 ]
-  then
-    echo "$AWS_PROFILE"
-    return 0
-  fi
-  if [[ "$1" == "clear" ]]
-  then
-    unset AWS_PROFILE
-  else
-    export AWS_PROFILE="$1"
-  fi
-}
 
 # Use startship prompt: https://starship.rs/
 eval "$(starship init zsh)"
