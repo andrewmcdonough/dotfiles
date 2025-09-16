@@ -32,6 +32,10 @@ map("n", "<Leader>ca", "<Cmd>lua vim.lsp.buf.code_action()<CR>", opts)
 map("n", "gd", "<Cmd>lua vim.lsp.buf.definition()<CR>", opts)
 map("n", "gi", "<Cmd>lua vim.lsp.buf.implementation()<CR>", opts)
 
+-- Claude
+map("n", "<Leader>cp", ":silent !echo @% | pbcopy", opts)
+map("n", "<Leader>cpa", ":CopyBufferPaths<CR>", opts)
+
 -- Git
 map("n", "<leader>gb", ":Git blame<CR>", opts)
 map("n", "<leader>gt", ":Gitsigns toggle_current_line_blame<CR>", opts)
