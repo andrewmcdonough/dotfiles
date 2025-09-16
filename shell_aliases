@@ -1,6 +1,7 @@
 # System aliases
 alias vopen='hdiutil attach ~/vault.dmg && ssh-add ~/.ssh/id_rsa'
 alias kcr='killall -9 Google\ Chrome'
+alias kcrr=osascript -e 'tell application "Google Chrome" to close (every tab of every window)'
 alias jst='python -mjson.tool'
 alias mystart='mysql.server start'
 alias zreload='source ~/.zshrc'
