@@ -33,7 +33,7 @@ map("n", "gd", "<Cmd>lua vim.lsp.buf.definition()<CR>", opts)
 map("n", "gi", "<Cmd>lua vim.lsp.buf.implementation()<CR>", opts)
 
 -- Claude
-map("n", "<Leader>cp", ":silent !echo @% | pbcopy", opts)
+map("n", "<Leader>cpp", ":let @+ = '@' . expand('%')<CR>", opts)
 map("n", "<Leader>cpa", ":CopyBufferPaths<CR>", opts)
 
 -- Git
