@@ -1,0 +1,11 @@
+Brewfile
+Brewfile.minimal
+ghostty_config
+install.sh
+mac_setup.sh
+karabiner.json
+packages.lst
+README.md
+repomix-output.xml
+requirements.txt
+synergy.conf
