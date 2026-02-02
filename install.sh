@@ -1,40 +1,16 @@
 #!/bin/bash
 
-
-mkdir -p ~/.config
-mkdir -p ~/.config/yamllint
-mkdir -p ~/.config/nvim/
-mkdir -p ~/tmp
-
-ln -s -f ~/dotfiles/vimrc ~/.vimrc
-ln -s -f ~/dotfiles/gitconfig ~/.gitconfig
-ln -s -f ~/dotfiles/git-completion.bash ~/.git-completion
-ln -s -f ~/dotfiles/bashrc ~/.bashrc
-ln -s -f ~/dotfiles/zshrc ~/.zshrc
-ln -s -f ~/dotfiles/ackrc ~/.ackrc
-ln -s -f ~/dotfiles/pryrc ~/.pryrc
-ln -s -f ~/dotfiles/gitignore_global ~/.gitignore_global
-ln -s -f ~/dotfiles/lynxrc ~/.lynxrc
-ln -s -f ~/dotfiles/irbrc ~/.irbrc
-ln -s -f ~/dotfiles/rspec ~/.rspec
-ln -s -f ~/dotfiles/rubocop.yml ~/.rubocop.yml
-ln -s -f ~/dotfiles/tmux.conf ~/.tmux.conf
-ln -s -f ~/dotfiles/shell_aliases ~/.shell_aliases
-ln -s -f ~/dotfiles/yamllint.yaml ~/.config/yamllint/config
-ln -s -f ~/dotfiles/eslint.yaml ~/.eslint.yaml
-ln -s -f ~/dotfiles/git-completion.bash ~/.git-completion.bash
-ln -s -f ~/dotfiles/git-prompt.sh ~/.git-prompt.sh
-ln -s -f ~/dotfiles/starship.toml ~/.config/starship.toml
-ln -s -f ~/dotfiles/init.vim ~/.config/nvim/init.vim
-ln -s -f ~/dotfiles/hammerspoon/init.lua .hammerspoon/init.lua
-ln -s -f ~/dotfiles/ghostty_config ~/Library/Application\ Support/com.mitchellh.ghostty/config
-
 # Install vimplug
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
          https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
 # Install homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+brew install chezmoi
+
+# Install config
+chezmoi apply
 
 # Run unshared config
 . ~/Dropbox/config/install.sh
