@@ -1,11 +1,30 @@
-# Andrew McDonough's Configuration Files
+# Dotfiles
 
-I'm in the process of cleaning up my dotfiles, and decided to start with a clean repository. I'm slowly cleaning up years of config bloat, and copying configurations across one at a time.
+Personal configuration files and system setup, managed with [chezmoi](https://www.chezmoi.io/).
+
+## What's included
+
+- Shell configuration (zsh + [oh-my-zsh](https://ohmyz.sh/))
+- Neovim config
+- tmux config
+- Git config
+- Karabiner key mappings (macOS)
+- Homebrew packages (via Brewfile)
+
+## How it works
+
+[Chezmoi](https://www.chezmoi.io/) manages dotfiles by keeping a source directory (this repo) and applying it to your home directory. Files prefixed with `dot_` are placed as dotfiles in `~`. Run `chezmoi apply` to sync changes.
 
 ## Installation
 
-Clone the repo into ~/dotfiles, then run the install script. This symlinks the config files in your home directory.
+Clone the repo, then run the install script:
 
+```bash
+bash install.sh
 ```
-sh install.sh
-```
+
+The script handles platform differences automatically:
+
+- **macOS**: Installs Homebrew (if needed), installs chezmoi via Homebrew, and sets macOS defaults
+- **Linux**: Installs chezmoi via its install script
+- **Both**: Applies chezmoi config and installs oh-my-zsh (if not already present)
