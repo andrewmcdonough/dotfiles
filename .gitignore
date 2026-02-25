@@ -4,3 +4,5 @@ repomix-output.txt
 repomix-output.xml
 .claude/
 .DS_Store
+Brewfile.work
+Brewfile.combined
