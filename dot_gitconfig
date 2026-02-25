@@ -38,7 +38,7 @@
 [core]
   editor = /opt/homebrew/bin/nvim
   excludesfile = ~/.gitignore
-	pager = diff-so-fancy | less --tabs=4 -RFXS
+  pager = delta
 
 [branch]
   autosetuprebase = always
@@ -54,8 +54,8 @@
   clean = git-lfs clean -- %f
   smudge = git-lfs smudge -- %f
 [interactive]
-	diffFilter = diff-so-fancy --patch
+  diffFilter = delta --color-only
 [init]
-	defaultBranch = main
+  defaultBranch = main
 [gpg "ssh"]
-	defaultKeyCommand = ssh-add -L
+  defaultKeyCommand = ssh-add -L
