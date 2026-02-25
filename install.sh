@@ -1,25 +1,41 @@
 #!/bin/bash
+set -euo pipefail
 
-# Install vimplug
-sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-         https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+is_macos() {
+    [[ "$(uname -s)" == "Darwin" ]]
+}
 
-# Install homebrew
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+is_linux() {
+    [[ "$(uname -s)" == "Linux" ]]
+}
 
-brew install chezmoi
+# Install homebrew (macOS only)
+if is_macos && ! command -v brew &>/dev/null; then
+    echo "Installing Homebrew..."
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
 
-# Install config
+# Install chezmoi
+if ! command -v chezmoi &>/dev/null; then
+    if is_macos; then
+        brew install chezmoi
+    elif is_linux; then
+        sh -c "$(curl -fsLS get.chezmoi.io)"
+    fi
+fi
+
+# Apply config
 chezmoi apply
+
+# macOS-specific setup
+if is_macos; then
+    defaults write com.apple.screencapture location "~/Screenshots"
+fi
+
+# Install oh-my-zsh
+if [[ ! -d "${HOME}/.oh-my-zsh" ]]; then
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+fi
 
 # Run unshared config
 . ~/Dropbox/config/install.sh
-
-# Install chruby
-#wget -O chruby-0.3.9.tar.gz https://github.com/postmodern/chruby/archive/v0.3.9.tar.gz
-#tar -xzvf chruby-0.3.9.tar.gz
-#cd chruby-0.3.9/
-#sudo make install
-
-# Install asdf
-#git clone https://github.com/asdf-vm/asdf.git ~/.asdf
