@@ -1,67 +1,20 @@
 # System aliases
-alias vopen='hdiutil attach ~/vault.dmg && ssh-add ~/.ssh/id_rsa'
 alias kcr='killall -9 Google\ Chrome'
 alias kcrr=osascript -e 'tell application "Google Chrome" to close (every tab of every window)'
 alias jst='python -mjson.tool'
 alias mystart='mysql.server start'
 alias zreload='source ~/.zshrc'
 
-# AWS aliases
-alias awl='awless'
-
-# Ruby and Rails aliases
-alias cuc='bundle exec cucumber --require features'
-alias be='bundle exec'
-alias dbe='dotenv bundle exec'
-alias rc='bundle exec rails console'
-alias ber='bundle exec rspec'
-alias rubo='bundle exec rubocop -a'
-
-# vim related aliases
-alias ctags-ruby='ctags -R --languages=ruby --exclude=.git --exclude=log -f.tags'
-
-# git aliases
-alias g='git'
-alias gca='git commit --amend'
-alias gwc='git whatchanged -p --abbrev-commit --pretty=medium'
-alias gco='git commit -v'
-alias gad='git add . -p'
-# alias glast="git for-each-ref --count=20 --sort=-committerdate refs/heads/ --format='%(refname:short)'"
-alias glast='git for-each-ref --count=40 --sort=-committerdate refs/heads/ --format='\''%(refname:short)'\'' | fzf | xargs git checkout'
-alias gpr="hub pull-request -b master"
-
 alias cm='chezmoi'
-
-# K8S aliases
-alias k='kubectl'
-alias kctx='kubectl config use-context'
-alias kgp='kubectl get pods'
-alias kgpa='kubectl get pods --all-namepsaces'
-alias krc='kubectl exec -it $(kubectl get pods | grep '"'"'qa-da'"'"' | cut -d '"'"' '"'"' -f 1) bundle exec rails console'
-alias ksh='kubectl exec -it $(kubectl get pods | grep '"'"'qa-da'"'"' | cut -d '"'"' '"'"' -f 1) /bin/sh'
 
 # To create co-authored text
 alias coauth='printf "Co-authored-by: %s" "$(git log --pretty=format:"%an <%ae>" -1000 | sort | uniq | fzf)" | pbcopy'
-
-# Ansible
-alias av='ansible-vault'
-alias ap='ansible-playbook'
 
 # PlantUML - for creating UML from text files
 alias puml="java -jar ~/bin/plantuml.jar -verbose"
 
 # My common typos
 alias sl="ls"
-
-# Terraform
-alias tf="terraform"
-alias tfi="terraform init"
-alias tfp="terraform plan"
-alias tfa="terraform apply"
-
-# Privileges
-alias adminon="/Applications/Privileges.app/Contents/Resources/PrivilegesCLI --add"
-alias adminoff="/Applications/Privileges.app/Contents/Resources/PrivilegesCLI --remove"
 
 # Aliases I don't share on GitHub as they have sensitive information
 [[ -f "$HOME/.unshared_aliases" ]] && source "$HOME/.unshared_aliases"
