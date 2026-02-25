@@ -1,86 +1,122 @@
-tap "heroku/brew"
-brew "ansible"
-brew "aspell"
-brew "automake"
-brew "aws-vault"
-brew "awscli"
-brew "bash-completion"
-brew "certbot"
-brew "chezmoi"
-brew "cmake"
-brew "coreutils"
-brew "dependency-check"
-brew "direnv"
-brew "dos2unix"
-brew "eslint"
-brew "esphome"
-brew "fd"
-brew "ffmpeg"
-brew "fzf"
-brew "gcc"
-brew "gh"
-brew "ghostscript"
+# Version control
 brew "git"
+brew "gh"
 brew "git-delta"
 brew "git-extras"
 brew "git-lfs"
 brew "gnupg"
-brew "gnuplot"
-brew "graphviz"
-brew "htop"
-brew "hugo"
-brew "imagemagick"
-brew "jq"
-brew "llvm"
-brew "lnav"
-brew "maven"
-brew "moreutils"
-brew "neovim"
-brew "netcat"
-brew "nmap"
-brew "p7zip"
-brew "pandoc"
-brew "postgresql@17"
-brew "redis"
-brew "repomix"
-brew "ripgrep"
-brew "shellcheck"
-brew "socat"
-brew "sox"
+
+# Shell and terminal
+brew "bash-completion"
+brew "fzf"
 brew "starship"
-brew "tailscale"
-brew "terraform"
-brew "tflint"
 brew "tmux"
 brew "tree"
-brew "trivy"
 brew "watch"
-brew "watchman"
+brew "zoxide"
+
+# CLI utilities
+brew "coreutils"
+brew "dos2unix"
+brew "fd"
+brew "htop"
+brew "jq"
+brew "lnav"
+brew "moreutils"
+brew "p7zip"
+brew "ripgrep"
 brew "wget"
 brew "xmlstarlet"
+
+# Editors
+brew "neovim"
+
+# DevOps and cloud
+brew "ansible"
+brew "awscli"
+brew "aws-vault"
+brew "certbot"
+brew "chezmoi"
+brew "direnv"
+brew "terraform"
+brew "tflint"
+
+# Security
+brew "dependency-check"
+brew "nmap"
+brew "trivy"
+
+# Networking
+brew "netcat"
+brew "socat"
+brew "tailscale"
+
+# Build tools
+brew "automake"
+brew "cmake"
+brew "gcc"
+brew "llvm"
+brew "maven"
+
+# Languages and linters
+brew "eslint"
+brew "shellcheck"
 brew "yamllint"
-brew "zoxide"
+
+# Databases
+brew "postgresql@17"
+brew "redis"
+
+# Media
+brew "ffmpeg"
+brew "imagemagick"
+brew "sox"
+
+# Documentation
+brew "ghostscript"
+brew "gnuplot"
+brew "graphviz"
+brew "pandoc"
+
+# Misc
+brew "aspell"
+brew "esphome"
+brew "hugo"
+brew "repomix"
+brew "watchman"
+
+# Casks - productivity
 cask "1password-cli"
-cask "blackhole-2ch"
 cask "dropbox"
-cask "flutter"
-cask "font-hack-nerd-font"
-cask "font-sf-mono-nerd-font-ligaturized"
-cask "gcloud-cli"
 cask "hammerspoon"
-cask "iterm2"
-cask "ngrok"
-cask "obs"
 cask "obsidian"
 cask "slack"
-cask "wezterm"
 cask "zoom"
+
+# Casks - development
+cask "flutter"
+cask "ngrok"
+cask "gcloud-cli"
+cask "iterm2"
+cask "wezterm"
+
+# Casks - media
+cask "blackhole-2ch"
+cask "obs"
+
+# Casks - fonts
+cask "font-hack-nerd-font"
+cask "font-sf-mono-nerd-font-ligaturized"
+
+# VS Code extensions
 vscode "eamodio.gitlens"
 vscode "github.copilot"
 vscode "github.copilot-chat"
 vscode "ms-vscode-remote.remote-containers"
 vscode "vscodevim.vim"
 vscode "vue.volar"
+
+# Go tools
 go "github.com/go-delve/delve/cmd/dlv"
 go "github.com/kisielk/errcheck"
 go "github.com/davidrjenni/reftools/cmd/fillstruct"
