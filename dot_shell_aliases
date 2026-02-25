@@ -30,6 +30,8 @@ alias gad='git add . -p'
 alias glast='git for-each-ref --count=40 --sort=-committerdate refs/heads/ --format='\''%(refname:short)'\'' | fzf | xargs git checkout'
 alias gpr="hub pull-request -b master"
 
+alias cm='chezmoi'
+
 # K8S aliases
 alias k='kubectl'
 alias kctx='kubectl config use-context'
