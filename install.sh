@@ -27,8 +27,11 @@ fi
 # Apply config
 chezmoi apply
 
-# macOS-specific setup
+# Install packages from Brewfile (macOS only)
 if is_macos; then
+    SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+    brew bundle install --file="${SCRIPT_DIR}/Brewfile"
+
     defaults write com.apple.screencapture location "~/Screenshots"
 fi
 
