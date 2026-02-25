@@ -41,4 +41,6 @@ if [[ ! -d "${HOME}/.oh-my-zsh" ]]; then
 fi
 
 # Run unshared config
-. ~/Dropbox/config/install.sh
+if [[ -f ~/Dropbox/config/install.sh ]]; then
+    . ~/Dropbox/config/install.sh
+fi

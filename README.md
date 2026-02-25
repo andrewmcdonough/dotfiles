@@ -8,7 +8,6 @@ Personal configuration files and system setup, managed with [chezmoi](https://ww
 - Neovim config
 - tmux config
 - Git config
-- Karabiner key mappings (macOS)
 - Homebrew packages (via Brewfile)
 
 ## How it works
