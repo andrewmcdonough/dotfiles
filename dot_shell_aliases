@@ -10,6 +10,9 @@ alias cm='chezmoi'
 # To create co-authored text
 alias coauth='printf "Co-authored-by: %s" "$(git log --pretty=format:"%an <%ae>" -1000 | sort | uniq | fzf)" | pbcopy'
 
+# To quickly switch to a recent branch
+alias glast='git for-each-ref --count=40 --sort=-committerdate refs/heads/ --format='\''%(refname:short)'\'' | fzf | xargs git checkout'
+
 # PlantUML - for creating UML from text files
 alias puml="java -jar ~/bin/plantuml.jar -verbose"
 
