@@ -111,12 +111,12 @@ return {
             formatter = {
               enable = true,
             },
-            rubyVersionManager = "asdf",
+            rubyVersionManager = "mise",
             includePaths = {
-              -- ASDF Ruby standard library paths
-              vim.fn.expand("~/.asdf/installs/ruby/*/lib/ruby/*/"),
-              -- ASDF Ruby gem paths
-              vim.fn.expand("~/.asdf/installs/ruby/*/lib/ruby/gems/*/gems/*/lib"),
+              -- mise Ruby standard library paths
+              vim.fn.expand("~/.local/share/mise/installs/ruby/*/lib/ruby/*/"),
+              -- mise Ruby gem paths
+              vim.fn.expand("~/.local/share/mise/installs/ruby/*/lib/ruby/gems/*/gems/*/lib"),
               -- Project bundled gems
               vim.fn.getcwd() .. "/vendor/bundle/ruby/*/gems/*/lib",
             }

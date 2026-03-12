@@ -40,6 +40,7 @@ brew "chezmoi"
 brew "direnv"
 brew "terraform"
 brew "tflint"
+brew "mise"
 
 # Security
 brew "dependency-check"
