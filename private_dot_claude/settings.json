@@ -17,9 +17,7 @@
       "Bash(cat:*)",
       "Bash(ls:*)",
       "Bash(echo:*)",
-      "Bash(rm:*)",
       "Bash(mv:*)",
-      "Bash(chmod:*)",
       "Bash(tee:*)",
       "Bash(dotenv:*)",
       "Bash(bin/:*)",
@@ -47,10 +45,11 @@
       "Bash(ch-production-write-console:*)",
       "Bash(scribe-console:*)",
       "Bash(*scribe-console*)",
-      "Bash(gh workflow run:*)",
-      "Bash(gh workflow run *)"
+      "Bash(gh workflow run:*)"
     ],
     "ask": [
+      "Bash(rm:*)",
+      "Bash(chmod:*)",
       "Bash(*rails db:*)",
       "Bash(psql*)",
       "Bash(sqlite3*)",
