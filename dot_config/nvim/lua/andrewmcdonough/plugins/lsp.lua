@@ -30,7 +30,6 @@ return {
         -- Servers to automatically install
         ensure_installed = {
           "lua_ls",
-          "ruby_lsp",
           "ts_ls",
           "volar",
         },
