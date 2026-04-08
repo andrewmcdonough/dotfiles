@@ -19,15 +19,40 @@ local function basename(s)
   return tostring(s):gsub(".*[/\\]", "")
 end
 
+-- Query tmux for session/window name, cached briefly per pane
+local tmux_cache = {}
+local function get_tmux_title(pane_id)
+  local now = os.time()
+  local cached = tmux_cache[pane_id]
+  if cached and (now - cached.time) < 2 then
+    return cached.title
+  end
+  local ok, stdout = wezterm.run_child_process({ "tmux", "display-message", "-p", "#S/#W" })
+  local title = nil
+  if ok and stdout then
+    title = stdout:gsub("%s+$", "")
+    if title == "" then title = nil end
+  end
+  tmux_cache[pane_id] = { time = now, title = title }
+  return title
+end
+
 -- Event handlers (must come BEFORE the return)
 wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
   local is_active = tab.is_active
-  local title = tab.active_pane.title or "shell"
+  local pane = tab.active_pane
+  local title
 
-  title = title:gsub(" — .*", "")
-  title = title:gsub("^.*/", "")
-  title = title:gsub("^~", "🏠")
-  title = title:gsub("%s+", " ")
+  if pane.title == "tmux" then
+    local info = get_tmux_title(pane.pane_id)
+    title = info and ("tmux (" .. info .. ")") or "tmux"
+  else
+    title = pane.title or "shell"
+    title = title:gsub(" — .*", "")
+    title = title:gsub("^.*/", "")
+    title = title:gsub("^~", "🏠")
+    title = title:gsub("%s+", " ")
+  end
 
   local bg_active = "#313244"
   local fg_active = "#cdd6f4"

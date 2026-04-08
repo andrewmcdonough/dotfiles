@@ -56,6 +56,15 @@ esac
 bindkey "$terminfo[kcuu1]" up-history
 bindkey "$terminfo[kcud1]" down-history
 
+# Write tmux session/window name to a temp file so wezterm can read it for tab titles
+if [ -n "$TMUX" ] && [ -n "$WEZTERM_PANE" ]; then
+  _update_wezterm_tmux_tab() {
+    tmux display-message -p '#S/#W' > "/tmp/wezterm-tmux-${WEZTERM_PANE}"
+  }
+  autoload -Uz add-zsh-hook
+  add-zsh-hook precmd _update_wezterm_tmux_tab
+fi
+
 # Use startship prompt: https://starship.rs/
 eval "$(starship init zsh)"
 
