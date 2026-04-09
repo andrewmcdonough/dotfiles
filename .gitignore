@@ -6,3 +6,6 @@ repomix-output.xml
 .DS_Store
 Brewfile.work
 Brewfile.combined
+.ssh/
+.aws/
+.env
