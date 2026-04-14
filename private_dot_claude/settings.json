@@ -29,7 +29,8 @@
       "WebFetch",
       "mcp__playwright__*",
       "mcp__rollbar__*",
-      "mcp__trello__*"
+      "mcp__trello__*",
+      "Read(~/.local/share/mise/*)"
     ],
     "deny": [
       "Bash(op *)",
@@ -56,6 +57,19 @@
       "Bash(redis-cli*)"
     ],
     "defaultMode": "plan"
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/log-permission-requests.sh"
+          }
+        ]
+      }
+    ]
   },
   "statusLine": {
     "type": "command",
