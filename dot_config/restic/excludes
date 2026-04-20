@@ -1,0 +1,40 @@
+# Version control
+.git
+
+# macOS
+.DS_Store
+.Spotlight-V100
+.Trashes
+
+# Caches and temp
+**/node_modules
+**/.cache
+**/__pycache__
+**/*.pyc
+**/Cache
+**/CacheStorage
+**/.tmp
+
+# Build artifacts
+**/target
+**/dist
+**/build
+**/_build
+**/out
+
+# Package manager caches
+**/.npm
+**/.cargo/registry
+**/.gradle/caches
+
+# IDE / editor state
+**/.idea
+**/.vscode
+*.swp
+*.swo
+
+# Logs
+**/*.log
+
+# Containers
+**/docker-volumes

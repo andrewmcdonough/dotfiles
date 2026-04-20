@@ -1,0 +1,46 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# ── 1Password config ──────────────────────────────────────────────
+OP_ACCOUNT="my.1password.com"
+OP_B2_KEY_ID="op://Private/Backblaze B2 Restic/username"
+OP_B2_APP_KEY="op://Private/Backblaze B2 Restic/password"
+OP_RESTIC_PW="op://Private/Restic Backup Password/password"
+
+# ── Restic / B2 config ────────────────────────────────────────────
+RESTIC_REPOSITORY="b2:amcdonough-restic-backups"
+PATHS_FILE="$HOME/.config/restic/paths"
+EXCLUDES_FILE="$HOME/.config/restic/excludes"
+
+# ── Preflight checks ─────────────────────────────────────────────
+for cmd in restic op; do
+  command -v "$cmd" >/dev/null || { echo "error: $cmd not found"; exit 1; }
+done
+
+# Export B2 creds (restic's B2 backend reads these env vars)
+export B2_ACCOUNT_ID; B2_ACCOUNT_ID="$(op read --account "$OP_ACCOUNT" "$OP_B2_KEY_ID")"
+export B2_ACCOUNT_KEY; B2_ACCOUNT_KEY="$(op read --account "$OP_ACCOUNT" "$OP_B2_APP_KEY")"
+export RESTIC_REPOSITORY
+export RESTIC_PASSWORD_COMMAND="op read --account '$OP_ACCOUNT' '$OP_RESTIC_PW'"
+
+# ── Subcommands ───────────────────────────────────────────────────
+cmd="${1:-run}"
+
+case "$cmd" in
+  init)
+    restic init
+    ;;
+  run)
+    [[ -f "$PATHS_FILE" ]] || { echo "error: create $PATHS_FILE first (one dir per line)"; exit 1; }
+    args=(--files-from "$PATHS_FILE" --verbose)
+    [[ -f "$EXCLUDES_FILE" ]] && args+=(--exclude-file "$EXCLUDES_FILE")
+    restic backup "${args[@]}"
+    ;;
+  snapshots)
+    restic snapshots --host "$(hostname -s)"
+    ;;
+  *)
+    shift
+    restic "$cmd" "$@"
+    ;;
+esac
