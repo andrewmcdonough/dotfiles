@@ -96,7 +96,6 @@ cask "slack"
 cask "zoom"
 
 # Casks - development
-cask "flutter"
 cask "ngrok"
 cask "gcloud-cli"
 cask "iterm2"
