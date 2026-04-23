@@ -102,6 +102,7 @@ return {
   keys = {
     { key = "Enter", mods = "CMD", action = act.ToggleFullScreen },
     { key = "Enter", mods = "SHIFT", action = act.SendString("\n") },
+    { key = "w", mods = "CMD", action = act.CloseCurrentTab({ confirm = false }) },
   },
 
   window_padding = { left = 6, right = 6, top = 6, bottom = 6 },
