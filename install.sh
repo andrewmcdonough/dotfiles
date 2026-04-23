@@ -73,3 +73,6 @@ fi
 if [[ -f ~/Dropbox/config/install.sh ]]; then
     . ~/Dropbox/config/install.sh
 fi
+
+# Install Claude Code
+curl -fsSL https://claude.ai/install.sh | bash
