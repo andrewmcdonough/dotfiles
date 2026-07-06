@@ -29,6 +29,9 @@ export BLOCKSIZE=M # so du shows megabytes
 export DYLD_LIBRARY_PATH=/usr/local/mysql/lib:$DYLD_LIBRARY_PATH
 export DOCKER_BUILDKIT=1
 
+# Claude code settings
+export CLAUDE_CODE_DISABLE_MOUSE=1
+
 unsetopt hist_verify # Run !! immediately
 
 # Keep aliases in a separate file
