@@ -52,3 +52,7 @@ When you are using /compact, please focus on our conversation, your most recent 
 ## Python
 
 - Use uv for dependency management
+
+# Local (unmanaged) additions
+
+@~/.claude/CLAUDE.local.md
