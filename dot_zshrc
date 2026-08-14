@@ -31,6 +31,7 @@ export DOCKER_BUILDKIT=1
 
 # Claude code settings
 export CLAUDE_CODE_DISABLE_MOUSE=1
+export CLAUDE_CODE_DISABLE_ALTERNATE_SCREEN=1
 
 unsetopt hist_verify # Run !! immediately
 

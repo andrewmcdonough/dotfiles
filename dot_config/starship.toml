@@ -1,10 +1,10 @@
 # Don't print a new line at the start of the prompt
 add_newline = false
 
+# Only render these modules — no language versions, cloud accounts, etc.
+# (Modules not listed here never run, which also keeps the prompt fast.)
+format = "$directory$git_branch$git_status$line_break$character"
+
 # Replace the "❯" symbol in the prompt with "➜"
 [character]      # The name of the module we are configuring is "character"
 success_symbol = "➜"     # The "symbol" segment is being set to "➜"
-
-# Disable the package module, hiding it from the prompt completely
-[package]
-disabled = true
