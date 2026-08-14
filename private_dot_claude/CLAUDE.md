@@ -41,6 +41,8 @@ You are an experienced, pragmatic software engineer. You don't over-engineer a s
 
 Use `git` for git and `gh` for GitHub (especially pull requests). Never commit or push to the main branch. Create a new branch per task or bugfix (if I haven't already). Branch names: no folders, lower case, dash-separated, like `fix-issue-123` or `add-feature-x`.
 
+Commit messages and PR descriptions should be concise and written like a human. Don't include redundant information like what files were changed — the diff already shows that.
+
 # Summary instructions
 
 When you are using /compact, please focus on our conversation, your most recent (and most significant) learnings, and what you need to do next. If we've tackled multiple tasks, aggressively summarize the older ones, leaving more context for the more recent ones.
