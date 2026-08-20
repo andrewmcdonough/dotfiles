@@ -26,7 +26,6 @@ export GOPATH=$HOME/go
 export NODE_ENV=development
 export PATH=/opt/homebrew/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:$HOME/bin:$GOPATH/bin:$HOME/.local/bin:$PATH
 export BLOCKSIZE=M # so du shows megabytes
-export DYLD_LIBRARY_PATH=/usr/local/mysql/lib:$DYLD_LIBRARY_PATH
 export DOCKER_BUILDKIT=1
 
 # Claude code settings
