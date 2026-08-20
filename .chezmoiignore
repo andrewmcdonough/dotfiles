@@ -1,16 +1,9 @@
 authorized_keys
 Brewfile
-Brewfile.minimal
 Brewfile.work
 Brewfile.combined
 CLAUDE.md
-sync_homebrew.sh
 ghostty_config
 install.sh
-mac_setup.sh
-karabiner.json
-packages.lst
 README.md
-repomix-output.xml
-requirements.txt
-synergy.conf
+sync_homebrew.sh
