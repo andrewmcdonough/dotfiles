@@ -59,8 +59,9 @@ if [[ ! -d "${HOME}/.ssh" ]]; then
     chmod 700 "${HOME}/.ssh"
 fi
 if [[ ! -f "${HOME}/.ssh/authorized_keys" ]]; then
-    echo "Fetching authorized keys from GitHub..."
-    curl -fsSL https://github.com/andrewmcdonough.keys -o "${HOME}/.ssh/authorized_keys"
+    echo "Installing authorized keys..."
+    SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+    cp "${SCRIPT_DIR}/authorized_keys" "${HOME}/.ssh/authorized_keys"
     chmod 600 "${HOME}/.ssh/authorized_keys"
 fi
 
