@@ -3,7 +3,6 @@ Brewfile
 Brewfile.work
 Brewfile.combined
 CLAUDE.md
-ghostty_config
 install.sh
 README.md
 sync_homebrew.sh
