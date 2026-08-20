@@ -1,5 +1,9 @@
 Brewfile
 Brewfile.minimal
+Brewfile.work
+Brewfile.combined
+CLAUDE.md
+sync_homebrew.sh
 ghostty_config
 install.sh
 mac_setup.sh
