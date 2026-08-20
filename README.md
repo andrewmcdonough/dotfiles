@@ -4,7 +4,7 @@ Personal configuration files and system setup, managed with [chezmoi](https://ww
 
 ## What's included
 
-- Shell configuration (zsh + [oh-my-zsh](https://ohmyz.sh/))
+- Shell configuration (zsh, with plugins managed by [znap](https://github.com/marlonrichert/zsh-snap))
 - Neovim config
 - tmux config
 - Git config
@@ -26,7 +26,7 @@ The script handles platform differences automatically:
 
 - **macOS**: Installs Homebrew (if needed), installs chezmoi via Homebrew, and sets macOS defaults
 - **Linux**: Installs chezmoi via its install script
-- **Both**: Applies chezmoi config and installs oh-my-zsh (if not already present)
+- **Both**: Applies chezmoi config and installs Claude Code (if not already present)
 
 ## Backups
 
