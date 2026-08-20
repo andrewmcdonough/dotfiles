@@ -65,11 +65,6 @@ if [[ ! -f "${HOME}/.ssh/authorized_keys" ]]; then
     chmod 600 "${HOME}/.ssh/authorized_keys"
 fi
 
-# Install oh-my-zsh
-if [[ ! -d "${HOME}/.oh-my-zsh" ]]; then
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-fi
-
 # Run unshared config
 if [[ -f ~/Dropbox/config/install.sh ]]; then
     . ~/Dropbox/config/install.sh
