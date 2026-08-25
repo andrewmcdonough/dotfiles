@@ -4,6 +4,10 @@
     git clone --depth 1 -- \
         https://github.com/marlonrichert/zsh-snap.git ~/Git/zsh-snap
 
+# Don't let znap compile sourced files in the background; it drops .zwc
+# files next to sources, including ones that live inside other repos
+zstyle ':znap:*' auto-compile no
+
 source ~/Git/zsh-snap/znap.zsh  # Start Znap
 
 # Completion system (previously initialised by oh-my-zsh)
