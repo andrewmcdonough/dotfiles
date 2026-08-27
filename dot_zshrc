@@ -24,10 +24,12 @@ znap source ohmyzsh/ohmyzsh plugins/aws
 znap eval fzf 'fzf --zsh'          # key bindings + completion
 znap eval direnv 'direnv hook zsh'
 
-# History behaviour (previously set by oh-my-zsh)
-HISTSIZE=50000
-SAVEHIST=10000
+# History: shared across sessions and kept large. HISTSIZE exceeds SAVEHIST to
+# give hist_expire_dups_first room to drop duplicates before older entries.
+HISTSIZE=120000
+SAVEHIST=100000
 setopt extended_history hist_expire_dups_first hist_ignore_dups hist_ignore_space share_history
+alias history="fc -l 1"  # show all history, not just the last 16 lines
 
 # Set language environment
 export LANG=en_GB.UTF-8
