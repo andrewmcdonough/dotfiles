@@ -24,3 +24,11 @@ alias sl="ls"
 
 # Quick help on all aliases
 alias h="cat ~/.shell_aliases ~/.unshared_aliases"
+
+alias agentsview="docker run --rm -p 127.0.0.1:8080:8080 \
+  -v agentsview-data:/data \
+  -v "$HOME/.claude/projects:/agents/claude:ro" \
+  -v "$HOME/.forge:/agents/forge:ro" \
+  -e CLAUDE_PROJECTS_DIR=/agents/claude \
+  -e FORGE_DIR=/agents/forge \
+  ghcr.io/kenn-io/agentsview:latest"
