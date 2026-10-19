@@ -137,6 +137,11 @@ resize_mode = "prefix+r"
 # workspaces = "" # e.g. "ctrl+shift" makes ctrl+shift+1..9 switch workspaces directly
 # agents = ""     # e.g. "alt" makes alt+1..9 focus agent rows directly
 
+[[keys.command]]
+key = "prefix+shift+s"
+type = "shell"
+command = "/Users/amcdonough/.claude/bin/herdr-sort-tabs"
+
 # [worktrees]
 # directory = "~/.herdr/worktrees"
 
