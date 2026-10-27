@@ -1,5 +1,19 @@
 # https://ghostty.org/docs/config/reference
 # Cmd-Shift-, to reload
-background = 282c34
+
+theme = Catppuccin Mocha
+
+font-family = FiraCode Nerd Font
+font-size = 12
+adjust-cell-height = 10%
+
+window-padding-x = 6
+window-padding-y = 6
+macos-titlebar-style = tabs
+window-show-tab-bar = always
 macos-non-native-fullscreen = true
-window-padding-x = 10
+scrollbar = never
+
+confirm-close-surface = false
+
+keybind = shift+enter=text:\n
