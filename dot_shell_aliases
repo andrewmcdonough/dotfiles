@@ -7,6 +7,8 @@ alias zreload='source ~/.zshrc'
 
 alias cm='chezmoi'
 
+alias tailscale='/Applications/Tailscale.app/Contents/MacOS/Tailscale'
+
 # To create co-authored text
 alias coauth='printf "Co-authored-by: %s" "$(git log --pretty=format:"%an <%ae>" -1000 | sort | uniq | fzf)" | pbcopy'
 

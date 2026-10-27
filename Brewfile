@@ -51,7 +51,6 @@ brew "trivy"
 # Networking
 brew "netcat"
 brew "socat"
-brew "tailscale"
 
 # Build tools
 brew "automake"
