@@ -98,7 +98,7 @@ cask "zoom"
 cask "ngrok"
 cask "gcloud-cli"
 cask "iterm2"
-cask "wezterm"
+cask "wezterm@nightly"
 
 # Casks - media
 cask "blackhole-2ch"
