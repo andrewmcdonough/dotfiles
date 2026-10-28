@@ -9,8 +9,6 @@ adjust-cell-height = 10%
 
 window-padding-x = 6
 window-padding-y = 6
-macos-titlebar-style = tabs
-window-show-tab-bar = always
 macos-non-native-fullscreen = true
 scrollbar = never
 
