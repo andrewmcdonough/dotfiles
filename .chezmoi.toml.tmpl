@@ -1,0 +1,6 @@
+sourceDir = {{ .chezmoi.sourceDir | quote }}
+encryption = "age"
+
+[age]
+  identity = {{ joinPath .chezmoi.homeDir ".config/chezmoi/key.txt" | quote }}
+  recipient = "age17u6xv6k96eppvzpzpevh75l4md7w6c36pr73m2gd7lh8eh2cj3kqgqfejd"

@@ -14,6 +14,12 @@ Personal configuration files and system setup, managed with [chezmoi](https://ww
 
 [Chezmoi](https://www.chezmoi.io/) manages dotfiles by keeping a source directory (this repo) and applying it to your home directory. Files prefixed with `dot_` are placed as dotfiles in `~`. Run `chezmoi apply` to sync changes.
 
+### Private files
+
+Files prefixed with `encrypted_` are [age](https://age-encryption.org/)-encrypted; edit them with `chezmoi edit <target>`. The key lives in the 1Password item "chezmoi age key", and `install.sh` fetches it to `~/.config/chezmoi/key.txt`.
+
+`~/.unshared_env` is rendered from the 1Password item "Shell environment": every field in its `env` section becomes an `export`, so neither names nor values are in this repo. To add or change a variable, edit the item and run `chezmoi apply`.
+
 ## Installation
 
 Clone the repo, then run the install script:
@@ -26,7 +32,7 @@ The script handles platform differences automatically:
 
 - **macOS**: Installs Homebrew (if needed), installs chezmoi via Homebrew, and sets macOS defaults
 - **Linux**: Installs chezmoi via its install script
-- **Both**: Applies chezmoi config and installs Claude Code (if not already present)
+- **Both**: Fetches the chezmoi age key from 1Password, applies chezmoi config and installs Claude Code (if not already present)
 
 ## Backups
 

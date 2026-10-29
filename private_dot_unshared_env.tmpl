@@ -1,0 +1,8 @@
+{{- /* Each field in the "env" section of this 1Password item becomes an export; values are raw shell syntax */ -}}
+{{- if lookPath "op" }}
+{{-   range (onepassword "Shell environment" "" "captionhub.1password.com").fields }}
+{{-     if and (hasKey . "section") (eq .section.label "env") }}
+export {{ .label }}={{ .value }}
+{{-     end }}
+{{-   end }}
+{{- end }}

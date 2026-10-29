@@ -24,8 +24,19 @@ if ! command -v chezmoi &>/dev/null; then
     fi
 fi
 
+# Fetch the key for chezmoi's encrypted files
+AGE_KEY="${HOME}/.config/chezmoi/key.txt"
+if [[ ! -f "$AGE_KEY" ]]; then
+    if ! command -v op &>/dev/null; then
+        echo "Install the 1Password CLI, or put the 'chezmoi age key' item from 1Password in ${AGE_KEY}, then rerun." >&2
+        exit 1
+    fi
+    mkdir -p "$(dirname "$AGE_KEY")"
+    (umask 077 && op item get "chezmoi age key" --account captionhub.1password.com --fields label=password --reveal > "$AGE_KEY")
+fi
+
 # Apply config
-chezmoi apply
+chezmoi init --apply --source "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 # Install packages from Brewfile (macOS only)
 if is_macos; then
@@ -63,11 +74,6 @@ if [[ ! -f "${HOME}/.ssh/authorized_keys" ]]; then
     SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
     cp "${SCRIPT_DIR}/authorized_keys" "${HOME}/.ssh/authorized_keys"
     chmod 600 "${HOME}/.ssh/authorized_keys"
-fi
-
-# Run unshared config
-if [[ -f ~/Dropbox/config/install.sh ]]; then
-    . ~/Dropbox/config/install.sh
 fi
 
 # Install Claude Code
