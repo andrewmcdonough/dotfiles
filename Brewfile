@@ -97,7 +97,6 @@ cask "zoom"
 # Casks - development
 cask "ngrok"
 cask "gcloud-cli"
-cask "iterm2"
 cask "wezterm@nightly"
 
 # Casks - media
