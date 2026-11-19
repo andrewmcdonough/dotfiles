@@ -7,6 +7,15 @@ alias zreload='source ~/.zshrc'
 
 alias cm='chezmoi'
 
+# c → claude; c Some Name → claude --name 'Some Name'
+c() {
+  if (( $# == 0 )); then
+    claude
+  else
+    claude --name "$*"
+  fi
+}
+
 alias tailscale='/Applications/Tailscale.app/Contents/MacOS/Tailscale'
 
 # To create co-authored text
