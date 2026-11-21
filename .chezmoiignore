@@ -9,5 +9,5 @@ sync_homebrew.sh
 
 {{- /* Work-only config */}}
 {{ if not .work }}
-.aws/config
+.unshared_aliases
 {{ end }}

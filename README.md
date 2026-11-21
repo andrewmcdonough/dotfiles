@@ -20,7 +20,7 @@ Files prefixed with `encrypted_` are [age](https://age-encryption.org/)-encrypte
 
 `~/.unshared_env` is rendered from the 1Password item "Shell environment": every field in its `env` section becomes an `export`, so neither names nor values are in this repo. To add or change a variable, edit the item and run `chezmoi apply`.
 
-`chezmoi init` asks once whether the machine is a work machine. Work-only files (the AWS config) are only applied when it is; to change the answer, edit `work` under `[data]` in `~/.config/chezmoi/chezmoi.toml`.
+`chezmoi init` asks once whether the machine is a work machine. Work-only files (`~/.unshared_aliases`) are only applied when it is; to change the answer, edit `work` under `[data]` in `~/.config/chezmoi/chezmoi.toml`.
 
 ## Installation
 
