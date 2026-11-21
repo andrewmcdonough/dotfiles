@@ -32,7 +32,7 @@ if [[ ! -f "$AGE_KEY" ]]; then
         exit 1
     fi
     mkdir -p "$(dirname "$AGE_KEY")"
-    (umask 077 && op item get "chezmoi age key" --account captionhub.1password.com --fields label=password --reveal > "$AGE_KEY")
+    (umask 077 && op item get "chezmoi age key" --account my.1password.com --fields label=password --reveal > "$AGE_KEY")
 fi
 
 # Apply config
