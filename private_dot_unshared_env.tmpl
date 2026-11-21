@@ -1,8 +1,13 @@
 {{- /* Each field in the "env" section of this 1Password item becomes an export; values are raw shell syntax */ -}}
+{{- /* Work machines also get the CaptionHub account's item; personal machines never touch that account */ -}}
 {{- if lookPath "op" }}
-{{-   range (onepassword "Shell environment" "" "my.1password.com").fields }}
-{{-     if and (hasKey . "section") (eq .section.label "env") }}
+{{-   $accounts := list "my.1password.com" }}
+{{-   if .work }}{{ $accounts = append $accounts "captionhub.1password.com" }}{{ end }}
+{{-   range $accounts }}
+{{-     range (onepassword "Shell environment" "" .).fields }}
+{{-       if and (hasKey . "section") (eq .section.label "env") }}
 export {{ .label }}={{ .value }}
+{{-       end }}
 {{-     end }}
 {{-   end }}
 {{- end }}
