@@ -6,3 +6,8 @@ CLAUDE.md
 install.sh
 README.md
 sync_homebrew.sh
+
+{{- /* Work-only config */}}
+{{ if not .work }}
+.aws/config
+{{ end }}
