@@ -32,7 +32,9 @@ if [[ ! -f "$AGE_KEY" ]]; then
         exit 1
     fi
     mkdir -p "$(dirname "$AGE_KEY")"
-    (umask 077 && op item get "chezmoi age key" --account my.1password.com --fields label=password --reveal > "$AGE_KEY")
+    # Write to a temp file first so a failed fetch doesn't leave an empty key behind
+    (umask 077 && op item get "chezmoi age key" --account my.1password.com --fields label=password --reveal > "${AGE_KEY}.tmp")
+    mv "${AGE_KEY}.tmp" "$AGE_KEY"
 fi
 
 # Apply config
